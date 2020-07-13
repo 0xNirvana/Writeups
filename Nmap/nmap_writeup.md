@@ -2,7 +2,7 @@
 Continuing with another box on TryHackMe, as the name suggests this time it is [Nmap](https://nmap.org/). In my last writeup ([Vulnversity](https://github.com/n00b-0x31/TryHackMe-Writeups/blob/master/Vulnversity/vulnversity_writeup.md)), there was a part where nmap was used but it had a brief role over there. With this room ([Nmap](https://tryhackme.com/room/rpnmap)) on THM we can develop our nmap skill further.
 
 #### What is nmap?
-As per Wikipedia (https://en.wikipedia.org/wiki/Nmap), it a free open-source network scanner which can be used to discover hosts and services on a computer network by sending packets and analyzing responses. But once we start using nmap to it's fullest, we can see that it can be used for many more things like OS detection, encryptions being used, testing scripts and many more things. Basically, it is one of the most used tools to perfrom reconnaissance on any given target/s.
+As per Wikipedia (https://en.wikipedia.org/wiki/Nmap), it a free open-source network scanner which can be used to discover hosts and services on a computer network by sending packets and analyzing responses. But once we start using nmap to it's fullest, we can see that it can be used for many more things like OS detection, encryptions being used, testing scripts and many more things. Basically, it is one of the most used tools to perform reconnaissance on any given target/s.
 
 So, let's begin with the room now!
 
@@ -10,41 +10,41 @@ So, let's begin with the room now!
 We need to deploy the machine in order to gain access to it and nothing more is required in this task.
 
 ### [Task 2] Quiz
-In this task there are a number of questions that arranged in a way that we can get a better grip on the mostly used nmap switches. Remember for any help `man nmap` is always there.
-As this room is pretty straightforward and there is not much to discuss about, we can look into each switch's meaning at somewhat detailed level.
+In this task, there are a number of questions that arranged in a way that we can get a better grip on the mostly used nmap switches. Remember for any help `man nmap` is always there.
+As this room is pretty straightforward and there is not much to discuss, we can look into each switch's meaning at a somewhat detailed level.
 
 1. Accessing the Help Menu: `-h`
-  * With `nmap -h`, we can see all the various switches and their brief description. This can come in handly when we don't feel like going through the manual and just want to check the switch that we want.
+	* With `nmap -h`, we can see all the various switches and their brief description. This can come in handy when we don't feel like going through the manual and just want to check the switch that we want.
   
 2. Stealth Scan: `-sS`
 	```
 	nmap -sS <target_ip>
 	```
-	* It is the default and most popular type of scan. As the name suggest it can perform the scan in a stealth mode as it never opens a full TCP connection.
+	* It is the default and most popular type of scan. As the name suggests it can perform the scan in a stealth mode as it never opens a full TCP connection.
 
 3. UDP Scan: `-sU`
 	```
 	nmap -sU <target_ip>
 	```
-	* With this switch we can perform scan on the target machine's UDP port. This scan works by simply sending a UDP packet to every port on the target machine and analyzing the response.
+	* With this switch, we can perform scan on the target machine's UDP port. This scan works by simply sending a UDP packet to every port on the target machine and analyzing the response.
 	
 4. Operating System Detection: `-O`
 	```
 	nmap -O <target_ip>
 	```
-	* With this switch, we can directly detect the OS that the target machine is running. Sometimes, nmap is not able to detect the exact OS but it might provide some suspected OS's that might be running on the target.
+	* With this switch, we can directly detect the OS that the target machine is running. Sometimes, nmap is not able to detect the exact OS but it might provide some suspected OSs that might be running on the target.
 
 5. Service Version Detection: `-sV`
 	```
 	nmap -sV <target_ip>
 	```
-	* With this switch, we can detect the version of the service running on the open ports. Also, with the help of this information we can diffrentiate between truly open ports and filtered ports.
+	* With this switch, we can detect the version of the service running on the open ports. Also, with the help of this information, we can differentiate between truly open ports and filtered ports.
 
 6. Being Talky (Verbose): `-v`
 	```
 	nmap -v <target_ip>
 	```
-	* Sometimes we want to know what is going on in the backgound of the running scan and in such cases the verbose switch turns out to be really helpful.
+	* Sometimes we want to know what is going on in the background of the running scan and in such cases, the verbose switch turns out to be really helpful.
 
 7. Very Verbose: `-vv`
 	```
@@ -56,13 +56,13 @@ As this room is pretty straightforward and there is not much to discuss about, w
 	```
 	nmap -oX <target_ip>
 	```
-	* When performing the scan it can be handy to save the output of the scan so that it can used in future to check some major or minor details of the scan.
+	* When performing the scan it can be handy to save the output of the scan so that it can be used in the future to check some major or minor details of the scan.
 
 9. Aggressive Scan: `-A`
 	```
 	nmap -A <target_ip>
 	```
-	* When want in depth details of a scan we can use this switch as it is capable of performing OS detection, version detection, script scanning and traceroute all together.
+	* When want in-depth details of a scan we can use this switch as it is capable of performing OS detection, version detection, script scanning and traceroute all together.
 	
 10. Max Scan Speed: `-T5`
 	```
@@ -74,7 +74,7 @@ As this room is pretty straightforward and there is not much to discuss about, w
 	```
 	nmap -p<single port number or range> <target_ip>
 	```
-	* With this switch we can perform scan on a single port like `-p80` or over a range of ports like `-p100-2000`.
+	* With this switch, we can perform scan on a single port like `-p80` or over a range of ports like `-p100-2000`.
 
 12. Scanning All Ports: `-p-`
 	```
@@ -86,24 +86,24 @@ As this room is pretty straightforward and there is not much to discuss about, w
 	```
 	nmap --script <scrip_name> <target_ip>
 	```
-	* Nmap has a large variety of scripts that can check for various vulnerabilites and perform various detections.
+	* Nmap has a large variety of scripts that can check for various vulnerabilities and perform various detections.
 
 14. Running Vulnerability Scripts: `--script vuln`
 	```
 	nmap --script vuln <target_ip>
 	```
-	* There are many categories of scripts in nmap that are seggregated in various categories like auth, broadcast, exploit, fuzzer, vuln and many other.
+	* There are many categories of scripts in nmap that are segregated in various categories like auth, broadcast, exploit, fuzzer, vuln and many others.
 
 15. Scan Without Ping: `-Pn`
 	```
 	nmap -Pn <target_ip>
 	```
-	* With this switch nmap skips the discovery stage which is used to determine active machines for heavier scanning. When this switch is specified, nmap is forced to perform scan against every target IP address specified.
+	* With this switch, nmap skips the discovery stage which is used to determine active machines for heavier scanning. When this switch is specified, nmap is forced to perform a scan against every target IP address specified.
 	
 ### [Task 3] Nmap Scanning
 This section consists of various tasks that are needed to be performed on the actual deployed machine. I've explained the switches that are used for each task:
 
-Output for question 1, 2 and 3. As it seems that the results for all these three questions can be obtained from only one search `tester@kali:~$ sudo nmap -sS 10.10.103.104` I've provided it before answering them.
+Output for questions 1, 2 and 3. As it seems that the results for all these three questions can be obtained from only one search `tester@kali:~$ sudo nmap -sS 10.10.103.104` I've provided it before answering them.
 
 ```
 tester@kali:~$ sudo nmap -sS 10.10.103.104
@@ -123,22 +123,9 @@ Nmap done: 1 IP address (1 host up) scanned in 1128.53 seconds
 
 2. Open Ports
 	 * On running the previous scan, we get a list of ports from which we can determine the number of open ports.
-	 
-	 ```
-	tester@kali:~$ sudo nmap -sS <target_ip>
-	Nmap scan report for <target_ip>
-	Host is up (0.17s latency).
-	Not shown: 997 closed ports
-	PORT     STATE    SERVICE
-	22/tcp   open     ssh
-	80/tcp   open     http
-	8090/tcp filtered opsmessaging
-
-	Nmap done: 1 IP address (1 host up) scanned in 1128.53 seconds
-	```
 
 3. Communication Protocol
-	* From the previous scan result itself, we can determine the protocol as it is provided right besides the port number.
+	* From the previous scan result itself, we can determine the protocol as it is provided right beside the port number.
 	
 For the next 3 questions 4, 5 and 6 as well, only one search would also work and the output of that search is provided below:
 
@@ -242,9 +229,9 @@ Nmap done: 1 IP address (1 host up) scanned in 379.87 seconds
 	* Service detection can be performed using the `-sV` switch but we also know that `-A` search can perform multiple detections including service version detection and the output to that is provided above. From the details related to services running on various ports at the beginning of the output, we can see the version of service running on port 22.
 
 5. Find the Flag Not Set
-	* The output provided ablove contains the results of an aggresive `-A` scan and from that we can easily see under the details for port 80 that there is only flag that is not set.
+	* The output provided above contains the results of an aggressive `-A` scan and from that, we can easily see under the details for port 80 that there is the only flag that is not set.
 	
 6. Susceptible DoS Attack
-	* Under the details for port 80 itself, we can see that nmap has performed some script test and from that we can determine the DoS attack to which the machine is susceptible.
+	* Under the details for port 80 itself, we can see that nmap has performed some script tests and from that, we can determine the DoS attack to which the machine is susceptible.
 	
-With this we can conclude the Nmap room. This room introduced us with several different switches that we can use with nmap to tweak our scans.
+With this, we can conclude the Nmap room. This room introduced us with several different switches that we can use with nmap to tweak our scans.
