@@ -2,11 +2,11 @@
 This room is based on basic learning related to reconnaissance, web app attacks and simple privilege escalation.
 
 #### [Task 1] Deployment
-The first and most important task is to deploy the machine on which we can attack and complete all the subsequent tasks.
+The first and most important task is to deploy the machine on which we can perform the attacks and complete all the subsequent tasks.
 Once deployed, we are provided with the machine title, it's IP address and the time expiry time which can be extended as well.
 
 #### [Task 2] Reconnaissance
-As the name suggests this task is related to recon and the best tools for that is none other than [nmap](https://nmap.org/) that is practiced in this task. A few nmap flags and their description are already provided but other than that man nmap is always there for your help.
+As the name suggests this task is related to recon and the best tools for that is none other than [nmap](https://nmap.org/) which is practiced in this task. A few nmap flags and their description are already provided but other than that `man nmap` is always there for your help.
 
 I read all the tasks and ran only a single command as it takes a lot of time to perform the nmap scan and running different commands for each and every question would consume a large amount of time. The command that can be used is:
 `nmap -A -sV -p- -T4 <machine IP>`
@@ -80,8 +80,9 @@ Answers to some other questions are:
 1. `-p-400` will check the first 400 ports
 2. The flag `-n` will not perform DNS resolution
 
- #### [Task 3] GoBuster
- This task is all about learning basics related to [GoBuster](https://github.com/OJ/gobuster) which is a directory discovery tool. In case, if we don't have the tool on our attacking machine, in the task itself installation is explained. So, we run the GoBuster to check all the directories.
+#### [Task 3] GoBuster
+This task is all about learning basics related to [GoBuster](https://github.com/OJ/gobuster) which is a directory discovery tool. In case, if we don't have the tool on our attacking machine, in the task itself installation is explained. 
+Moving forward, we run the GoBuster to check all the directories.
 
 We run the following command to get a list of all the directories:
 `gobuster dir -u http://<machine IP>:3333 -w <wordlist path>`
@@ -118,7 +119,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 /internal (Status: 301)
 ```
 
-From the results, we can see that the form can be uploaded at: `/internal`.
+From the results, we can see that the form can be uploaded at: `./internal`.
 
 #### [Task 4] Compromising Web Server
 Now that we know a point from where we can enter into the target machine, we start testing various files that can be uploaded to the server. We can try files like .txt, .html, .md and other but the one that gets blocked is .php.
