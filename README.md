@@ -10,4 +10,4 @@ This repository is a collection of all the writeups that I have written for each
 ### Available Writeups
 | Room Name | Difficulty Level | Skills Focused |
 |-----------|------------------|----------------|
-|           |                  |                |
+|Vulnversity|Easy              |Nmap, GoBuster, Burp Intruder
