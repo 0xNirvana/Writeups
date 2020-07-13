@@ -1,4 +1,4 @@
-# TryHackMe-Writeups
+# TryHackMe Writeups
 
 TryHackMe is an online platform to learn things related to Computer Security. There are a lot of different rooms on the website that are focused on different skills. The room difficulties also differ from easy to difficult.
 
