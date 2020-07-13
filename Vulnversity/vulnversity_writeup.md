@@ -138,6 +138,7 @@ As we were able to access the user's folder, this means that we are currently ha
 `find / -perm /4000 2> /dev/null`
 
 | Flag | Description |
+|--------------|---------------------------------------------------------------------------|
 | / | The path for directory that is to be searched |
 | -perm | Find files related the specified permission value |
 | 2> /dev/null | Helps to omit the files we don't have access to from the resulting output |
