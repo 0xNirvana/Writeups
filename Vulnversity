@@ -1,7 +1,0 @@
-### Vulnversity
-This room is based on basic learning related to reconnaissance, web app attacks and simple privilege escalation.
-
-#### [Task 1] Deployment
-The first and most important task is to deploy the machine on which we can attack and complete all the subsequent tasks.
-Once deployed, we are provided with the machine title, it's IP address and the time expiry time which can be extended as well.
-
