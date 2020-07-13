@@ -6,7 +6,7 @@ The first and most important task is to deploy the machine on which we can attac
 Once deployed, we are provided with the machine title, it's IP address and the time expiry time which can be extended as well.
 
 #### [Task 2] Reconnaissance
-As the name suggests this task is related to recon and the best tools for that is none other than [nmap](https://nmap.org/) that is practiced in this task. A few nmap flag and their description are already provided but other than that man nmap is always there for your help.
+As the name suggests this task is related to recon and the best tools for that is none other than [nmap](https://nmap.org/) that is practiced in this task. A few nmap flags and their description are already provided but other than that man nmap is always there for your help.
 
 I read all the tasks and ran only a single command as it takes a lot of time to perform the nmap scan and running different commands for each and every question would consume a large amount of time. The command that can be used is:
 `nmap -A -sV -p- -T4 <machine IP>`
@@ -81,9 +81,9 @@ Answers to some other questions are:
 2. The flag `-n` will not perform DNS resolution
 
  #### [Task 3] GoBuster
- This task is all about learning basics related to [GoBuster](https://github.com/OJ/gobuster) which is directory discovery tool. In case, if we don't have the tool on our attacking machine, in the task itself installation is explained. So, we run the GoBuster to check all the directories.
+ This task is all about learning basics related to [GoBuster](https://github.com/OJ/gobuster) which is a directory discovery tool. In case, if we don't have the tool on our attacking machine, in the task itself installation is explained. So, we run the GoBuster to check all the directories.
 
-We run following command to get a list of all the directories:
+We run the following command to get a list of all the directories:
 `gobuster dir -u http://<machine IP>:3333 -w <wordlist path>`
 
 
@@ -93,7 +93,7 @@ We run following command to get a list of all the directories:
 | -w | To specify the path where our wordlist is stored |
 
 
-We are running the command on port 3333 as from nmap results we observed that the webserver was running on that port itself. Otherwise, in real world scenario, we would usually go for ports 80 and 443.
+We are running the command on port 3333 as from nmap results we observed that the web server was running on that port itself. Otherwise, in a real-world scenario, we would usually go for ports 80 and 443.
 
 GoBuster Result:
 ```
@@ -118,7 +118,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 /internal (Status: 301)
 ```
 
-From the results we can see that the form can be uploaded at: `/internal`.
+From the results, we can see that the form can be uploaded at: `/internal`.
 
 #### [Task 4] Compromising Web Server
 Now that we know a point from where we can enter into the target machine, we start testing various files that can be uploaded to the server. We can try files like .txt, .html, .md and other but the one that gets blocked is .php.
@@ -131,15 +131,15 @@ As per the instructions on the task, we need to download the reverse PHP shell a
 3. Upload the shell payload at `/internal`
 4. Visit: `http://<machine IP>:3333/internal/uploads/payload.phtml`
 
-Once we open the link, a netcat session starts on our listner with a shell access to the machine. To check the user who manages the web server, we can go to /home directory and find the user there. The flag is present in the directory of that user itself in a file named `user.txt`.
+Once we open the link, a netcat session starts on our listener with shell access to the machine. To check the user who manages the web server, we can go to /home directory and find the user there. The flag is present in the directory of that user itself in a file named `user.txt`.
 
 ### [Task 5] Privilege Escalation
-As we were able to access the user's folder, this means that we are currently having user level access but not root level. And to gain root level access we need to perform privilege escalation. After some googling, we can find over the internet that the permissions value for SUID files is 4000 and we can run a search accordingly:
+As we were able to access the user's folder, this means that we are currently having user-level access but not root level. And to gain root-level access we need to perform privilege escalation. After some googling, we can find over the internet that the permissions value for SUID files is 4000 and we can run a search accordingly:
 `find / -perm /4000 2> /dev/null`
 
 | Flag | Description |
 |--------------|---------------------------------------------------------------------------|
-| / | The path for directory that is to be searched |
+| / | The path for the directory that is to be searched |
 | -perm | Find files related the specified permission value |
 | 2> /dev/null | Helps to omit the files we don't have access to from the resulting output |
 
@@ -174,7 +174,7 @@ $ find / -perm /4000 2> /dev/null
 /sbin/mount.cifs
 ```
 
-The one file that stands out is /bin/systemctl. Now the next task is totally up on us. To solve this question and get the root flag there is only one source for our help and that is Google. After searching for `systemctl privilege escalation`, we can find results related to [GTFOBins](https://gtfobins.github.io/gtfobins/systemctl/).
+The one file that stands out is /bin/systemctl. Now the next task is totally upon us. To solve this question and get the root flag there is only one source for our help and that is Google. After searching for `systemctl privilege escalation`, we can find results related to [GTFOBins](https://gtfobins.github.io/gtfobins/systemctl/).
 
 Using GTFOBins for systemctl, exploitation can be performed as:
 
@@ -220,4 +220,6 @@ We need to make some changes to the commands provided in the GTFOBins which are 
 1. Replace `id` with `cat /root/root.txt` 
 2. Executing `/bin/systemctl` instead of `./systemctl` as we are not in `/bin`.
 
-And that is how we get the root and solve the room. 
+And that is how we get the root flag and solve the room. 
+
+
