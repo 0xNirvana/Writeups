@@ -8,8 +8,8 @@ Once deployed, we are provided with the machine title, it's IP address and the t
 #### [Task 2] Reconnaissance
 As the name suggests this task is related to recon and the best tools for that is none other than [nmap](https://nmap.org/) that is practiced in this task. A few nmap flag and their description are already provided but other than that man nmap is always there for your help.
 
-I read all the tasks and ran only a single command as it takes a lot of time to perform the nmap and running different commands for each and every question would consume a large amount of time.
-`nmap -A -p- -T4 <machine IP>`
+I read all the tasks and ran only a single command as it takes a lot of time to perform the nmap scan and running different commands for each and every question would consume a large amount of time. The command that can be used is:
+`nmap -A -sV -p- -T4 <machine IP>`
 
 
 | Flag | Description |
