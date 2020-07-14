@@ -70,3 +70,5 @@ Hint: If you are still not able to find the answer try various single digit valu
 Hint: Check for a file named `00-header`.
 
 With this the Day 1 Injection Challenge completes and I'll be back again tomorrow when `Broken Authentication` challenge begins!!!
+
+P.S. As this is a live challenge I'll be adding the latest challenge write-up only 24 hours after the latest challenge goes live!!!
