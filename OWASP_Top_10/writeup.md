@@ -45,7 +45,7 @@ Now, the most interesting part of THE PRACTICAL IMPLEMENTATION!!!!
 
 First of all, deploy the machine and browse to the URL: `http://<machine_ip>/evilshell.php` which would look something like:
 
-![EvilCorp](https://github.com/n00b-0x31/TryHackMe-Writeups/tree/master/OWASP_Top_10/.images)
+![EvilCorp](https://github.com/n00b-0x31/TryHackMe-Writeups/blob/master/OWASP_Top_10/.images/home_page.png)
 
 1. What strange text file is in the website root directory?
 * This question asks about an odd file present in the web root directory. Keep in mind it is asking about the `WEB ROOT` directory and not the `ROOT` directory. With the command, `pwd` we get the result as `/var/www/html` which is the `WEB ROOT` directory. All that needs to be done here is just to run the `ls` command to get a list of all the files present in this directory and find the odd file out.
