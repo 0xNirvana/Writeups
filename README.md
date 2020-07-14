@@ -11,4 +11,4 @@ This repository is a collection of all the writeups that I have written for each
 | Room Name | Difficulty Level | Skills Focused |
 |-----------|------------------|----------------|
 |[Vulnversity](https://github.com/n00b-0x31/TryHackMe-Writeups/blob/master/Vulnversity/vulnversity_writeup.md)|Easy|Nmap, GoBuster, Burp Intruder|
-|(Nmap)[https://github.com/n00b-0x31/TryHackMe-Writeups/blob/master/Nmap/nmap_writeup.md]|Easy|Nmap|
+|[Nmap](https://github.com/n00b-0x31/TryHackMe-Writeups/blob/master/Nmap/nmap_writeup.md)|Easy|Nmap|
