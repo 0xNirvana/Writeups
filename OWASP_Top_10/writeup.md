@@ -44,7 +44,28 @@ The task talks about a simple code snippet that is running behind the URL throug
 
 First of all, deploy the machine and browse to the URL: http://<machine_ip>/evilshell.php which would look something like:
 
-![EvilCorp]()
-1. This question asks about an odd file present in the web root directory. Keep in mind it is asking about the `WEB ROOT` directory and not the `ROOT` directory. With the command `pwd` we get the result as `/var/www/html` which is the `WEB ROOT` directory. All that needs to be done here is just to run the `ls` command to get a list of all the files present in this diretory and and find the odd file out.
+![EvilCorp](https://github.com/n00b-0x31/TryHackMe-Writeups/tree/master/OWASP_Top_10/.images)
 
-2. 
+1. What strange text file is in the website root directory?
+* This question asks about an odd file present in the web root directory. Keep in mind it is asking about the `WEB ROOT` directory and not the `ROOT` directory. With the command `pwd` we get the result as `/var/www/html` which is the `WEB ROOT` directory. All that needs to be done here is just to run the `ls` command to get a list of all the files present in this diretory and and find the odd file out.
+
+2. How many non-root/non-service/non-daemon users are there?
+* To determine the user on any Linux machine the best way is to take a look at the `/etc/passwd` file using the `cat` command. This file consits of all different accounts present on the system including root, service and daemon accounts. But the question is asking about non-root/non-service/non-daemon users on the system. To find such a user we must understand the different account that are present in the `/etc/passwd` file which are root, users, services and daemons. Visit [thislink] (https://stackoverflow.com/questions/28139377/daemon-and-service-difference) to understand the difference between service and daemon accounts. Moreover in a passwd file there are different types of shell assigned to user and many a times no shell is assigned, we need to understand that as well. Read about such shell [over here](https://www.howtogeek.com/296637/why-do-some-system-users-have-usrbinfalse-as-their-shell/). Once, we understand all these things we can easily determine the number of non-root/non-service/non-daemon accounts on the system. Refer [this link](https://computingforgeeks.com/how-to-list-users-in-linux/) to get an idea of various default accounts on the system. 
+
+Hint: If you are still not able to find the answer try various single digit values and then try to correlate the correct value with the passwd file.
+
+3. What user is this app running as? 
+* This is a very simple question and can be checked using `whoami` command.
+
+4. What is the user's shell set as?
+* We just need to correlate the current users shell details in the `/etc/passwd` file.
+
+5. What version of Ubuntu is running?
+* Another simple question which can be checked by a single command `ls_release -a`.
+
+6. Print out the MOTD.  What favorite beverage is shown?
+* This one was a bit confusing question as I did not know what MOTD meant. After some googling I came to know MOTD stands for 'Message of The Day'. The issue that I faced with this challenge was before Ubuntu 16 the MOTD was saved in `/etc/motd` file which was not present in this system as it is not running on version 16. But on other versions the files related to MOTD are stored in directory `/etc/update-motd.d`. We just need to `cat` the files present in this folder and go through them to find the answer to this question.
+
+Hint: Check for a file named `00-header`.
+
+With this the Day 1 Injection Challenge completes and I'll be back again tomorrow when `Broken Authentication` challenge begins!!!
