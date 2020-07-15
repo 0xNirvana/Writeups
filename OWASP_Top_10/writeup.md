@@ -73,39 +73,40 @@ Hint: Check for a file named `00-header`.
 With this the Day 1 Injection Challenge completes and I'll be back again tomorrow after the 24 hour buffer ends for `Broken Authentication` challenge!!!
 
 `July 15, 2020`
-The challege we are provided with today is related `Broken Authentication`. The task is very simple and easy to perform. So, let's just begin!
+
+The challenge we are provided with today is related to `Broken Authentication`. The task is very simple and easy to perform. So, let's just begin!
 
 ### [Task 7] Broken Authentication
-The main purpose of this task was mainly just to let us know what exactly does Broken Authentication mean, how can it affect, how it is usually performed and how can you protect yourself from this attack. Some of the major points in this task are:
+The main purpose of this task was mainly just to let us know what exactly does Broken Authentication means, how can it affect, how it is usually performed and how can you protect yourself from this attack. Some of the major points in this task are:
 
-* Authentication is the basic method which uses username and password to allow users the access to web application. Along with that session cookies are used to track users and their activities.
+* Authentication is the basic method that uses username and password to allow users access to the web application. Along with that session cookies are used to track users and their activities.
 
-* Some of the major issues that lead to flaws in authentication mechanism are:
+* Some of the major issues that lead to flaws in the authentication mechanism are:
 	* Bruteforce attacks
 	* Use of weak passwords
 	* Weak session cookies
 
-* When such attacks are performed, an attacker can gain access to users personal data including personal files, financial details and others.
+* When such attacks are performed, an attacker can gain access to the user's personal data including personal files, financial details and others.
 
 * Some steps that can be taken to mitigate this kind of attack are:
-	* Setting up account lockout in case of multiple login failures.
+	* Setting up an account lockout in case of multiple login failures.
 	* Implementing multi-factor authentication.
 
 ### [Task 8] Broken Authentication Practical
-Moving on to the practical task for Broken Authentication, they have explained about one of the basic flaws related to user authentication database which is if not handled properly we can register a user with same username and prepend it with a blank space(` `). Doing so, and then logging in with the newly registered username we can gain access to the account of original user. This can turn into a really serious issue if found in any real world web application.
+Moving on to the practical task for Broken Authentication, they have explained about one of the basic flaws related to user authentication database which is if not handled properly we can register a user with the same username and prepend it with a blank space(` `). Doing so, and then logging in with the newly registered username we can gain access to the account of the original user. This can turn into a really serious issue if found in any real-world web application.
 
 Now, we can start with the questions where we just need to register a new user as explained above on the deployed machine at `hhtp://<machine_ip:8888` and get the flag. The login page would look something like this:
 
 ![image](./.images/broken_auth_login.png)
 
 1. What is the flag that you found in darren's account?
-* For this question we just simply need to visit go to the user registration page and register with the username as ` darren`. Once registered, we need to login with the same username and the password used while registering the new user. Doing so, will lead us to user's homepage from where we can get the flag.
+* For this question, we just simply need to visit go to the user registration page and register with the username as ` darren`. Once registered, we need to log in with the same username and the password used while registering the new user. Doing so will lead us to the user's homepage from where we can get the flag.
 
 2. What is the flag that you found in arthur's account?
 * Again we need to perform the same steps as we did in the previous step but with the username as ` arthur`.
 
-With this, we can wrap up the Broken Authentication challenge. This challenge was really simple as there were no steps which were that difficult. 
+With this, we can wrap up the Broken Authentication challenge. This challenge was really simple as there were no steps that were very difficult. 
 
-The next challenge is related to Sensitive Data Exposure, I will add the write-up for the same immediately after the 24 hour buffer ends for that!
+The next challenge is related to Sensitive Data Exposure, I will add the write-up for the same immediately after the 24-hour buffer ends for that!
 
-P.S. As this is a live challenge I'll be adding the latest challenge write-up only 24 hours after the it goes live!!!
+P.S. As this is a live challenge I'll be adding the latest challenge write-up only 24 hours after it goes live!!!
