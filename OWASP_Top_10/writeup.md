@@ -1,5 +1,5 @@
 ## OWASP Top 10 
-This writeup is going to be based on the [OWASP Top 10](https://tryhackme.com/room/owasptop10) room on TryHackMe. The challenges to this room are going to be released on a daily basis so that for 10 days one can focus on one of the Top 10 vulnerabilities whichever has been released for that day. I will try to add every vulnerability task to this article as soon as I complete it.
+This write-up is going to be based on the [OWASP Top 10](https://tryhackme.com/room/owasptop10) room on TryHackMe. The challenges to this room are going to be released on a daily basis so that for 10 days one can focus on one of the Top 10 vulnerabilities whichever has been released for that day. I will try to add every vulnerability task to this article as soon as I complete it.
 
 ### What is OWASP and what are the Top 10???
 Open Web Application Security Project or better known as [OWASP](https://owasp.org/) is an online community that produces tools, documentations, technologies and many other things related to web security which can be accessed by anyone and at a cost-free rate. Some of the major OWASP projects that I know are [ZAP](https://www.zaproxy.org/), [Juice Shop](https://github.com/bkimminich/juice-shop), obviously the [Top 10](https://owasp.org/www-project-top-ten/) and many others.
@@ -8,11 +8,12 @@ Coming to OWASP Top 10, OWASP releases this document called OWASP Top 10 which c
 
 Coming to this room, it does not require any prerequisite knowledge related to these vulnerabilities but one can easily develop some knowledge regarding them. Moving on let's get started with the `OWASP Top 10` room!
 
+`July 14, 2020`
 ### [Task 1] Introduction
 This task just provides a list of all the vulnerabilities that are going to be covered in this room.
 
-1. Injection
-2. Broken Authentication
+1. [Injection](#task-1-introduction)
+2. [Broken Authentication](#task-7-broken-authentication)
 3. Sensitive Data Exposure
 4. XML External Entity
 5. Broken Access Control
@@ -45,7 +46,7 @@ Now, the most interesting part of THE PRACTICAL IMPLEMENTATION!!!!
 
 First of all, deploy the machine and browse to the URL: `http://<machine_ip>/evilshell.php` which would look something like:
 
-![EvilCorp](https://github.com/n00b-0x31/TryHackMe-Writeups/blob/master/OWASP_Top_10/.images/home_page.png)
+![EvilCorp](./.images/home_page.png)
 
 1. What strange text file is in the website root directory?
 * This question asks about an odd file present in the web root directory. Keep in mind it is asking about the `WEB ROOT` directory and not the `ROOT` directory. With the command, `pwd` we get the result as `/var/www/html` which is the `WEB ROOT` directory. All that needs to be done here is just to run the `ls` command to get a list of all the files present in this directory and find the odd file out.
@@ -71,4 +72,40 @@ Hint: Check for a file named `00-header`.
 
 With this the Day 1 Injection Challenge completes and I'll be back again tomorrow after the 24 hour buffer ends for `Broken Authentication` challenge!!!
 
-P.S. As this is a live challenge I'll be adding the latest challenge write-up only 24 hours after the latest challenge goes live!!!
+`July 15, 2020`
+The challege we are provided with today is related `Broken Authentication`. The task is very simple and easy to perform. So, let's just begin!
+
+### [Task 7] Broken Authentication
+The main purpose of this task was mainly just to let us know what exactly does Broken Authentication mean, how can it affect, how it is usually performed and how can you protect yourself from this attack. Some of the major points in this task are:
+
+* Authentication is the basic method which uses username and password to allow users the access to web application. Along with that session cookies are used to track users and their activities.
+
+* Some of the major issues that lead to flaws in authentication mechanism are:
+	* Bruteforce attacks
+	* Use of weak passwords
+	* Weak session cookies
+
+* When such attacks are performed, an attacker can gain access to users personal data including personal files, financial details and others.
+
+* Some steps that can be taken to mitigate this kind of attack are:
+	* Setting up account lockout in case of multiple login failures.
+	* Implementing multi-factor authentication.
+
+### [Task 8] Broken Authentication Practical
+Moving on to the practical task for Broken Authentication, they have explained about one of the basic flaws related to user authentication database which is if not handled properly we can register a user with same username and prepend it with a blank space(` `). Doing so, and then logging in with the newly registered username we can gain access to the account of original user. This can turn into a really serious issue if found in any real world web application.
+
+Now, we can start with the questions where we just need to register a new user as explained above on the deployed machine at `hhtp://<machine_ip:8888` and get the flag. The login page would look something like this:
+
+![image](./.images/broken_auth_login.png)
+
+1. What is the flag that you found in darren's account?
+* For this question we just simply need to visit go to the user registration page and register with the username as ` darren`. Once registered, we need to login with the same username and the password used while registering the new user. Doing so, will lead us to user's homepage from where we can get the flag.
+
+2. What is the flag that you found in arthur's account?
+* Again we need to perform the same steps as we did in the previous step but with the username as ` arthur`.
+
+With this, we can wrap up the Broken Authentication challenge. This challenge was really simple as there were no steps which were that difficult. 
+
+The next challenge is related to Sensitive Data Exposure, I will add the write-up for the same immediately after the 24 hour buffer ends for that!
+
+P.S. As this is a live challenge I'll be adding the latest challenge write-up only 24 hours after the it goes live!!!
