@@ -127,7 +127,7 @@ Along with that, a few commands are provided that can be used to solve this chal
 1. `file <filename>`: Provides information regarding the file-type. In the context of this task, we need to find a file of file-type SQLite.
 2. `sqlite3 <filename>`: Access the SQLite file.
 3. SQLite commands:
-	* `.tables;`: Gives a list of tables present in the database
+	* `.tables`: Gives a list of tables present in the database
 	* `PRAGMA table_info(<tablename>);`: Provides the details of the columns in the mentioned table
 	* `SELECT * FROM <tablename>;`: Print all the content of the table
 
@@ -158,6 +158,7 @@ Hint: It is a database file.
 		`sqlite3 <filename>`
 	* The next task would be to check the tables in the database:
 		`.tables`
+		
 		Output:
 		```
 		sqlite> .tables
@@ -166,6 +167,7 @@ Hint: It is a database file.
 	* We can see two tables over there but only one is of our use which is `users`.
 	* Now, we need to know in what order data is arranged in the table, so we can use the command:
 		`PRAGMA table_info(users);`
+		
 		Output:
 		```
 		sqlite> PRAGMA table_info(users);
