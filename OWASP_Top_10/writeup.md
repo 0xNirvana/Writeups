@@ -14,7 +14,7 @@ This task just provides a list of all the vulnerabilities that are going to be c
 
 1. [Injection](#task-1-introduction)
 2. [Broken Authentication](#task-7-broken-authentication)
-3. Sensitive Data Exposure
+3. [Sensitive Data Exposure](#task-9-sensitive-data-exposure-introduction)
 4. XML External Entity
 5. Broken Access Control
 6. Security Misconfiguration
@@ -108,5 +108,85 @@ Now, we can start with the questions where we just need to register a new user a
 With this, we can wrap up the Broken Authentication challenge. This challenge was really simple as there were no steps that were very difficult. 
 
 The next challenge is related to Sensitive Data Exposure, I will add the write-up for the same immediately after the 24-hour buffer ends for that!
+
+`July 16, 2020`
+
+Today, the tasks related to `Sensitive Data Exposure` were released and to be honest they were very easy. A lot of supporting material is provided which makes it further easy to complete the tasks. First, we will go through some important points from all the informative tasks.
+
+### [Task 9] Sensitive Data Exposure (Introduction)
+As the task name suggests, it is going to be an intro to today's topic. Sensitive data exposure is nothing but can be explained in simple terms as leakage of some personal or confidential information from a web app. This can range from basic user details such as name, age, contact details to some confidential details like financial credentials, security numbers and others.
+
+### [Task 10] Sensitive Data Exposure (Supporting Material 1)
+This task tells us about the two ways in which data is generally stored in a web app which are:
+1. Database (eg. MySQL, MariaDB)
+2. Stored as files (called as "flat-files")
+
+In this challenge, we are going to work with flat-files. And, also one hint is provided that this flat-file is stored underneath the root directory. 
+
+Along with that, a few commands are provided that can be used to solve this challenge:
+1. `file <filename>`: Provides information regarding the file-type. In the context of this task, we need to find a file of file-type SQLite.
+2. `sqlite3 <filename>`: Access the SQLite file.
+3. SQLite commands:
+	* `.tables;`: Gives a list of tables present in the database
+	* `PRAGMA table_info(<tablename>);`: Provides the details of the columns in the mentioned table
+	* `SELECT * FROM <tablename>;`: Print all the content of the table
+
+### [Task 11] Sensitive Data Exposure (Supporting Material 2)
+This task talks about password hashes. From the previous task, we understood how we can access the content of a table in the database. But this is a known fact that passwords are never stored as plaintext in any database. And the same case is over here, but to keep things easy, passwords are hashed using MD5 hashes. 
+
+Along with that, they have mentioned a tool called [Crackstation](https://crackstation.net/) which can be used to break this hash and retrieve the original password from the hash.
+
+### [Task 12] Sensitive Data Exposure (Challenge)
+Beginning with the actual practical part of this challenge we can move on to the task questions!
+
+1. We need to find a directory where information regarding some sensitive data is leaked.
+* For this task, we need to deploy the machine and try to look around the web app to find some sort of information leakage. The first point of information leakage on a website that should come to our mind should be comments in the source code of the web app. We can try going through different web pages and look for some comments. The homepage would look like:
+
+![sense_and_sensitivity](./.images/sensitive_data_exposure.png)
+
+We can check the source code by right-clicking on the webpage and selecting the inspect element option. 
+On the homepage, we don't find anything that would prove to be helpful so we can move on to the login page and see that in the source code there is a comment that mentions the directory where changes are meant to be made. And this directory itself is the answer to the first question.
+
+2. Navigate to the directory you found in question one. What file stands out as being likely to contain sensitive data? 
+* This task is pretty simple, we just need to navigate to the directory we found in the previous question. Over there, there is only one file that appears to be odd from the rest of the files and obviously, the name of that file is our answer.
+
+Hint: It is a database file.
+
+3. Use the supporting material to access sensitive data. What is the password hash of the admin user?
+* We can download that odd file and then try to perform all the database operations explained in task 9 on it. So, let's begin with that:
+	* To open the file we can use the command:
+		`sqlite3 <filename>`
+	* The next task would be to check the tables in the database:
+		`.tables`
+		Output:
+		```
+		sqlite> .tables
+		sessions  users 
+		```
+	* We can see two tables over there but only one is of our use which is `users`.
+	* Now, we need to know in what order data is arranged in the table, so we can use the command:
+		`PRAGMA table_info(users);`
+		Output:
+		```
+		sqlite> PRAGMA table_info(users);
+		0|userID|TEXT|1||1
+		1|username|TEXT|1||0
+		2|password|TEXT|1||0
+		3|admin|INT|1||0
+		```
+	* From these details, we can see that the third column would be containing the password hashes that we need.
+	* To extract the password we need to print the table 'users'. And we can do that by using the query:
+		`sqlite> SELECT * FROM users;`
+	* From the printed table, we need the hash in the third column that belongs to 'admin' and submit it as the answer for the third question.
+
+4. Crack the hash. What is the admin's plaintext password?
+* This question is pretty simple as we just need to copy the hash value paste it at [CrackStation](https://crackstation.net/) and obtain the decrypted password which can be submitted as the password for this question.
+
+5. Login as the admin. What is the flag?
+* As the question suggests, we just need to use the cracked password with the username 'admin' and log in. Once, logged in we can see the flag right in front of us!!!
+
+With this, we complete the Sensitive Data Exposure challenge. As I said earlier, this challenge was pretty simple and didn't take much time to solve as well.
+
+Wait till tomorrow, when I'll add the walkthrough XML External Entity challenge!!!
 
 P.S. As this is a live challenge I'll be adding the latest challenge write-up only 24 hours after it goes live!!!
