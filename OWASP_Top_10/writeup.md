@@ -286,6 +286,6 @@ To solve all the questions in this task we need to first deploy the machine and 
 
 So, one more challenge is over and I'll be back again tomorrow with the write-up for Broken Access Control!!!
 
-Go to [Top](#task-1-introduction)
+Go to [Top](#owasp-top-10)
 
 P.S. As this is a live challenge I'll be adding the latest challenge write-up only 24 hours after it goes live!!!
