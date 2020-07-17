@@ -15,7 +15,7 @@ This task just provides a list of all the vulnerabilities that are going to be c
 1. [Injection](#task-1-introduction)
 2. [Broken Authentication](#task-7-broken-authentication)
 3. [Sensitive Data Exposure](#task-9-sensitive-data-exposure-introduction)
-4. XML External Entity
+4. [XML External Entity](#task-13-xml-external-entity)
 5. Broken Access Control
 6. Security Misconfiguration
 7. Cross-Site Scripting
@@ -190,5 +190,99 @@ Hint: It is a database file.
 With this, we complete the Sensitive Data Exposure challenge. As I said earlier, this challenge was pretty simple and didn't take much time to solve as well.
 
 Wait till tomorrow, when I'll add the walkthrough XML External Entity challenge!!!
+
+`July 17, 2020`
+
+In today's challenge, it was all related to the basics of the XXE attack. As this series is meant for beginners, the challenge was pretty easy to solve. Just required some payload manipulations.
+
+### [Task 13] XML External Entity
+This task broadly enumerates various attacks that an XXE attack can lead to such as Denial of Service(DoS), Server Side Request Forgery(SSRF), Remote Code Execution (RCE) and port scanning. It also describes to types of XXE attacks:
+
+1. In-band attack: Attacker gets an immediate response to XXE payload
+2. Out-of-band attack (blind XXE): Attacker has to reflect the output of the attack to some other file or their server
+
+### [Task 14] XML External Entity - eXtensible Markup Language
+This task talks about basics on an XML file. Following are some of the major points from the task:
+
+1. XML consists of rules for encoding documents in a human and machine-readable format.
+2. It is platform independent.
+3. Changes can be made to an XML document without affecting data presentation.
+4. XML allows validations using DTD's and Schema ensuring XML document is free from any syntax error.
+5. Syntax:
+	* Every XML document starts with a XML Prolog
+	`<?xml version="1.0" encoding="UTF-8"?>`
+	* This determines the XML version and the encoding used, also this line is not compulsory.
+	* Every XML document must have a ROOT element without which it would be considered invalid.
+	* Every opening tag must be closed with an identical tag with a preceding `/`.
+	
+		Eg. `<tag>Example</tag>`
+
+For the first time, in this task certain questions are added based on the theory which are given below:
+
+1. Full form of XML
+* The answer lies in the task's name itself :P
+2. Is it compulsory to have XML prolog in XML documents?
+* It's optional
+3. Can we validate XML documents against a schema?
+* That is how we ensure the XML document is free from any errors.
+4. How can we specify XML version and encoding in XML document?
+* This is defined at the first line of the XML document and a specific term is given to that line
+
+### [Task 15] XML External Entity - DTD
+As the task name suggests, this task provides some brief information on Document Type Definition (DTD) which is used to define the structure and legal elements of an XML file.
+
+DTD Example:
+```
+<!DOCTYPE note [ <!ELEMENT note (to,from,heading,body)> <!ELEMENT to (#PCDATA)> <!ELEMENT from (#PCDATA)> <!ELEMENT heading (#PCDATA)> <!ELEMENT body (#PCDATA)> ]>
+```
+Some terms that one must know from above payload:
+1. The value next to `!DOCTYPE` is the ROOT element
+2. The term `!ELEMENT` is used to define an element such as it's type (eg. #PCDATA which means parsable character data) or the sub-elements which it consists (`<!ELEMENT note (to,from,heading,body)>`)
+
+This task also contains a few questions and answers to them are pretty simple as we just need to add a '!' before the term that is to be defined.
+
+### [Task 16] XML External Entity - XXE Payload
+In this task, two different payloads are presented. We can see each one of them and try to understand their sole purpose:
+
+1. ENTITY assignment
+```
+<!DOCTYPE replace [<!ENTITY name "feast"> ]>
+ <userInfo>
+  <firstName>falcon</firstName>
+  <lastName>&name;</lastName>
+ </userInfo>
+ ```
+* In this payload, the main point that should be focused is the use of an entity for assignment purposes. It can understood as at the beginning of the payload the entity name has been defined as the value "feast". Later, the same value is used for the value of `lastName` using the term `&name;`.
+
+2. Payload to read system files
+```
+<?xml version="1.0"?>
+<!DOCTYPE root [<!ENTITY read SYSTEM 'file:///etc/passwd'>]>
+<root>&read;</root>
+```
+* The main purpose of using this payload is to access system files. This is done by defining the path of the system file for a read action. We will be using this payload for solving the challenges in the next task.
+
+### [Task 17] XML External Entity - Exploiting
+To solve all the questions in this task we need to first deploy the machine and browse to `http://<machine_ip>` which would look something like:
+
+![XXE_homepage](./.images/XML_homepage.png)
+
+1. Try to display your own name using any payload.
+* This question is pretty simple as we just need to print our name using XXE. For this, we can use the first payload and simply change various values and test the payload like values of `name'`, `firstName` or `lastName`.
+
+2. See if you can read the /etc/passwd
+* This task is also really simple and we can use the second payload from the previous task and just run it on the deployed website.
+
+3. What is the name of the user in /etc/passwd
+* This could be found out at the last line of the output from the previous question.
+
+4. Where is falcon's SSH key located?
+* For this question, we first need to know where the SSH key is stored on a Linux machine. After some googling, we can find the exact location and file in which this key is stored and that is `/home/<username>/.ssh/id_rsa`. We can change the username value and replace `/etc/passwd` in the second payload with this new path. And this new path itself is the answer to the question.
+
+5. What are the first 18 characters for falcon's private key
+* Once we execute the payload that we created in the last task, we can get falcon's SSH key and from the same key, we need to take out the first 18 characters from the key and use them as the answer to the question.
+P.S. Don't make a silly mistake by copying those 18 characters from `-----BEGIN RSA PRIVATE KEY----- ` as the actual key begins after this!!!
+
+So, one more challenge is over and I'll be back again tomorrow with the write-up for Broken Access Control!!!
 
 P.S. As this is a live challenge I'll be adding the latest challenge write-up only 24 hours after it goes live!!!
