@@ -281,8 +281,11 @@ To solve all the questions in this task we need to first deploy the machine and 
 
 5. What are the first 18 characters for falcon's private key
 * Once we execute the payload that we created in the last task, we can get falcon's SSH key and from the same key, we need to take out the first 18 characters from the key and use them as the answer to the question.
-P.S. Don't make a silly mistake by copying those 18 characters from `-----BEGIN RSA PRIVATE KEY----- ` as the actual key begins after this!!!
+
+	P.S. Don't make a silly mistake by copying those 18 characters from `-----BEGIN RSA PRIVATE KEY----- ` as the actual key begins after this!!!
 
 So, one more challenge is over and I'll be back again tomorrow with the write-up for Broken Access Control!!!
+
+Go to [Top](#task-1-introduction)
 
 P.S. As this is a live challenge I'll be adding the latest challenge write-up only 24 hours after it goes live!!!
