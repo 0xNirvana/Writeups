@@ -16,7 +16,7 @@ This task just provides a list of all the vulnerabilities that are going to be c
 2. [Broken Authentication](#task-7-broken-authentication)
 3. [Sensitive Data Exposure](#task-9-sensitive-data-exposure-introduction)
 4. [XML External Entity](#task-13-xml-external-entity)
-5. Broken Access Control
+5. [Broken Access Control](#task-18-broken-access-control)
 6. Security Misconfiguration
 7. Cross-Site Scripting
 8. Insecure Deserialization
@@ -285,6 +285,36 @@ To solve all the questions in this task we need to first deploy the machine and 
 	P.S. Don't make a silly mistake by copying those 18 characters from `-----BEGIN RSA PRIVATE KEY----- ` as the actual key begins after this!!!
 
 So, one more challenge is over and I'll be back again tomorrow with the write-up for Broken Access Control!!!
+
+`July 18, 2020`
+
+I must say that from all the challenges that were presented till date, today's challenge was the quickest and easiest. Today, the topic was Broken Access Control and let's see what all was there!
+
+### [Task 18] Broken Access Control
+This task explains how some pages are intended to be accessed only by a few users i.e. only a few users can authenticate such confidential pages and/or data. But sometimes, there might be some logical error in the application itself through which a normal user can easily access the information no one is allowed to access. 
+
+In simple terms, a normal user when bypasses the required authentication and can access sensitive data it is called Broken Access Contol.
+
+### [Task19] Broken Access Control (IDOR Challenge)
+Insecure Direct Object Reference (IDOR), as the name suggests is an attack when the link to sensitive is referenced in an insecure way. The best example of an IDOR attack is when you change the parameters passed in the URL and land up on a page that you are not allowed to access.
+
+The challenge today is based on the same logic. So, let's begin:
+
+We must deploy the machine first and then access the machine IP which would look something like:
+
+![idor_homepage](./.images/idor_homepage.png)
+
+We are provided the username and password, using them we can log in and get a lousy text saying `I am noot`.
+
+But other than that we can't see anything else. So, how can the IDOR attack be performed?
+As explained earlier we can manipulate the values passed in the URL. The URL would look like: `http://<machine_ip>/note.php?note=1`
+The only parameter that appears to be manipulated here is the value that is passed to `note`. We can test several values including negative numbers, 0 and other terms.
+
+Hint: The value is a non-negative integer and less than 10!!!
+
+As we access the right page, we can see the flag just waiting for us!
+
+So, with this the today's Broken Access Control challenge end. I'll be back again tomorrow with a writeup for the Security Misconfiguration challenge. Till then, keep hacking!!!
 
 Go to [Top](#owasp-top-10)
 
