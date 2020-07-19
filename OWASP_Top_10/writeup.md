@@ -17,7 +17,7 @@ This task just provides a list of all the vulnerabilities that are going to be c
 3. [Sensitive Data Exposure](#task-9-sensitive-data-exposure-introduction)
 4. [XML External Entity](#task-13-xml-external-entity)
 5. [Broken Access Control](#task-18-broken-access-control)
-6. Security Misconfiguration
+6. [Security Misconfiguration](#task-20-security-misconfiguration)
 7. Cross-Site Scripting
 8. Insecure Deserialization
 9. Components With Known Vulnerabilities
@@ -315,6 +315,48 @@ Hint: The value is a non-negative integer and less than 10!!!
 As we access the right page, we can see the flag just waiting for us!
 
 So, with this the today's Broken Access Control challenge end. I'll be back again tomorrow with a writeup for the Security Misconfiguration challenge. Till then, keep hacking!!!
+
+`July 19, 2020`
+
+I must say that today's Security Misconfiguration challenge was really easy and also gave somewhat realisitic feel to the challenge as well.
+
+### [Task 20] Security Misconfiguration
+To put it in simple terms, Security Misconfiguration happens when some loopholes are left behind on the application knowing or unknowingly. These misconfigurations might helps the attacker to directly attack the web app or at least help them in some other way to exploit the web app. Some of the security misconfigurations include but are not limited to:
+
+1. Improper permissions configuration
+2. Leaving unnecessary features enabled
+3. Using default credentials
+4. Improper error handling
+
+Coming to this challenge, it focuses on `Default Credentials`. We are not provided any further details but once we deploy the machine, we can the webpage for a note-taking app.
+
+![pensivenote_homepage](./.images/pensivenote_homepage.png)
+
+All that we have here is the username and password field, a link to change the password and another link to swap the theme.
+
+The task earlier talked about default credential, so we can try different default credentials like:
+
+| Username | Password |
+|----------|----------|
+| admin    | admin    |
+| root     | toor     |
+| admin    | Password |
+| admin    | Password1|
+| ' or 1 =1 -- | random |
+
+But unfortunately, none of these work. We can try to analyze the JS files as well from the debugger but even there we can't find anything. Next thing that can be tried is changing the password from the `Change Password` link:
+
+![pensivenote_changepw](./.images/pensivenote_changepw.png)
+
+But to do so, we'd need the current username and password which we don't know. 
+
+Almost after an hour or so, I thought of googling `PensiveNote` but no success over there as well. Then I thought to check the hint, where it says that we don't have the web app's source code but we can try to read the documentation for default credentials. After surfing through all the webpages of the web app, we can be pretty sure that the documentation is not on the box.
+
+It took me another 1 hour to realize that, people sometimes use GitHub to store their web apps' source code and documentation. So, we can go to GitHub and maybe search for `Pensive Note` over there. And the first repository that pops up belongs to `NinjaJc01` who is the creator of this room as well. So, all we need to do next is to read the documentation (README.md) and obtain the much-awaited default credentials. Using these credentials we can login on the web app and get the flag!
+
+As I said earlier, this box gave a realistic feel as there was no information on the box and it made us think one step beyond googling as well!!!
+
+With this, we can conclude today's challenge. Wait till tomorrow when I'll add the walkthrough for the XXS challenge!!!
 
 Go to [Top](#owasp-top-10)
 
