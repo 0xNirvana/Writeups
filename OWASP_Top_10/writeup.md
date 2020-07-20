@@ -1,4 +1,4 @@
-## OWASP Top 10 
+# OWASP Top 10 
 This write-up is going to be based on the [OWASP Top 10](https://tryhackme.com/room/owasptop10) room on TryHackMe. The challenges to this room are going to be released on a daily basis so that for 10 days one can focus on one of the Top 10 vulnerabilities whichever has been released for that day. I will try to add every vulnerability task to this article as soon as I complete it.
 
 ### What is OWASP and what are the Top 10???
@@ -12,18 +12,20 @@ Coming to this room, it does not require any prerequisite knowledge related to t
 ### [Task 1] Introduction
 This task just provides a list of all the vulnerabilities that are going to be covered in this room.
 
-1. [Injection](#task-1-introduction)
-2. [Broken Authentication](#task-7-broken-authentication)
-3. [Sensitive Data Exposure](#task-9-sensitive-data-exposure-introduction)
-4. [XML External Entity](#task-13-xml-external-entity)
-5. [Broken Access Control](#task-18-broken-access-control)
-6. [Security Misconfiguration](#task-20-security-misconfiguration)
-7. Cross-Site Scripting
+1. [Injection](#injection)
+2. [Broken Authentication](#broken-authentication)
+3. [Sensitive Data Exposure](#sensitive-data-exposure)
+4. [XML External Entity](#xml-external-entity)
+5. [Broken Access Control](#broken-access-control)
+6. [Security Misconfiguration](#security-misconfiguration)
+7. [Cross-Site Scripting](#cross-site-scripting)
 8. Insecure Deserialization
 9. Components With Known Vulnerabilities
 10. Insufficient Logging and Monitoring
 
 #### Tasks 2 and 3 are just related to VPN access and daily prize. So, nothing important here.
+
+## Injection
 
 ### [Task 4] Injection
 This is the point where all the interesting stuff begins. In this task, they have briefed about what an Injection is, how it can be performed and how to defend yourself from such attacks. Following are some major points from the description they have provided:
@@ -72,7 +74,11 @@ Hint: Check for a file named `00-header`.
 
 With this the Day 1 Injection Challenge completes and I'll be back again tomorrow after the 24 hour buffer ends for `Broken Authentication` challenge!!!
 
+Go to [Top](#owasp-top-10)
+
 `July 15, 2020`
+
+## Broken Authentication
 
 The challenge we are provided with today is related to `Broken Authentication`. The task is very simple and easy to perform. So, let's just begin!
 
@@ -109,7 +115,11 @@ With this, we can wrap up the Broken Authentication challenge. This challenge wa
 
 The next challenge is related to Sensitive Data Exposure, I will add the write-up for the same immediately after the 24-hour buffer ends for that!
 
+Go to [Top](#owasp-top-10)
+
 `July 16, 2020`
+
+## Sensitive Data Exposure
 
 Today, the tasks related to `Sensitive Data Exposure` were released and to be honest they were very easy. A lot of supporting material is provided which makes it further easy to complete the tasks. First, we will go through some important points from all the informative tasks.
 
@@ -191,7 +201,11 @@ With this, we complete the Sensitive Data Exposure challenge. As I said earlier,
 
 Wait till tomorrow, when I'll add the walkthrough XML External Entity challenge!!!
 
+Go to [Top](#owasp-top-10)
+
 `July 17, 2020`
+
+## XML External Entity
 
 In today's challenge, it was all related to the basics of the XXE attack. As this series is meant for beginners, the challenge was pretty easy to solve. Just required some payload manipulations.
 
@@ -286,7 +300,11 @@ To solve all the questions in this task we need to first deploy the machine and 
 
 So, one more challenge is over and I'll be back again tomorrow with the write-up for Broken Access Control!!!
 
+Go to [Top](#owasp-top-10)
+
 `July 18, 2020`
+
+## Broken Access Control
 
 I must say that from all the challenges that were presented till date, today's challenge was the quickest and easiest. Today, the topic was Broken Access Control and let's see what all was there!
 
@@ -316,7 +334,11 @@ As we access the right page, we can see the flag just waiting for us!
 
 So, with this the today's Broken Access Control challenge end. I'll be back again tomorrow with a writeup for the Security Misconfiguration challenge. Till then, keep hacking!!!
 
+Go to [Top](#owasp-top-10)
+
 `July 19, 2020`
+
+## Security Misconfiguration
 
 I must say that today's Security Misconfiguration challenge was really easy and also gave somewhat realisitic feel to the challenge as well.
 
@@ -357,6 +379,72 @@ It took me another 1 hour to realize that, people sometimes use GitHub to store 
 As I said earlier, this box gave a realistic feel as there was no information on the box and it made us think one step beyond googling as well!!!
 
 With this, we can conclude today's challenge. Wait till tomorrow when I'll add the walkthrough for the XXS challenge!!!
+
+Go to [Top](#owasp-top-10)
+
+`July 20, 2020`
+
+## Cross-Site Scripting
+
+Here I am, back again with the wakthrough for one more challenge based on XSS. To be honest, I did not have much of prior knowledge related to XSS but found this challenge pretty simple. For today as well, there was only one task containing all the theory as well as the questions. So, let's just begin!
+
+### [Task 21] Cross-Site Scripting
+Cross-Site Scripting (XSS) attack is a type of attack through which you can execute a malicious script on the victim's machine. There are three types of this attack:
+
+1. Reflected XSS: This takes place when the victim clicks on some link that triggers this XSS.
+2. Stored XSS: When the XXS script is stored directly in the database of the web app.
+3. DOM-Based XSS: Document Object Model (DOM) is helpful to change the document's structure, style and content. DOM XSS are the ones that are in the DOM.
+
+Moving on to the questions, let's deploy yhe machine and go to `http://machine_ip/stored` which would look like:
+
+![xss_homepage](./.images/xss_homepage.png)
+
+P.S. When I did this challenge the `/reflected` link was not working but it can be accessed from the `/stored` link as well.
+
+We need to register with some username and password which will take us to the actual page where we can perform the attacks.
+
+For these questions, once the correct action is performed we will be provided with a flag that is to be used the answer for that specific question:
+
+1. The first question wants us to craft a payload that can cause a popup saying "Hello".
+* If we read the theory properly, then we can find a payload that does the same but prints "Hello World!", we can simply modify that payload and use it.
+```
+<script>alert(“Hello”)</script>
+```
+
+2. Craft a payload to show a popup having the victim's IP address.
+* We know that IP addresses are associated with the location of the user and for the same, in JavaScript, there is an object called `window.location.hostname` through which can capture the victim's IP address. We can use the same payload in previous question and modify it to complete this question.
+```
+<script>alert(window.location.hostname)</script>
+```
+
+The next few questions are based on stored XSS. 
+
+3. Insert some HTML tags in the comment box.
+* We can try to insert any HTML tag to get the flag like:
+```
+<p>paragraph</p>
+```
+
+4. Craft a payload to popup the cookies.
+* In JavaScript, cookies can be accessed by the object `document.cookies` and we can use the same along with script tags to get the flag for this answer.
+```
+<script>alert(document.cookies)</script>
+```
+
+5. Craft a payload to change "XSS Playground" to "I am a hacker"
+* This question was a bit tricky but not difficult. To complete this question, we can use the JavaScript object `document.queryselector` which returns the first element within the document that matches the specified selector. So, we need to first find the selector for "XSS Playground". 
+
+	To do so, we can simply select the text "XSS Playground", right-click and go to the `Inspect Element` option. Then we can see the `id` over there somewhat like:
+
+	![xss_playground_id](./.images/xss_playground_id.png)
+
+	Now we have the object to select the required text, the text's id and we can use the function `textContent` to change the text to whatever value we want and put all of that in a `script tag`.
+	```
+	<script>document.querySelector('#thm-title').textContent = 'I am a hacker'</script>
+	```
+	We can paste this in the comment box, verify that the text has changed and get the final flag as well.
+
+So, here we complete the XSS challenge as well. And tomorrow I'll add the walkthrough for `Insecure Deserialization`.
 
 Go to [Top](#owasp-top-10)
 
