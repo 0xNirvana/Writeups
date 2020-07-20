@@ -386,7 +386,7 @@ Go to [Top](#owasp-top-10)
 
 ## Cross-Site Scripting
 
-Here I am, back again with the wakthrough for one more challenge based on XSS. To be honest, I did not have much of prior knowledge related to XSS but found this challenge pretty simple. For today as well, there was only one task containing all the theory as well as the questions. So, let's just begin!
+Here I am, back again with the walkthrough for one more challenge based on XSS. To be honest, I did not have much of prior knowledge related to XSS but found this challenge pretty simple. For today as well, there was only one task containing all the theory as well as the questions. So, let's just begin!
 
 ### [Task 21] Cross-Site Scripting
 Cross-Site Scripting (XSS) attack is a type of attack through which you can execute a malicious script on the victim's machine. There are three types of this attack:
