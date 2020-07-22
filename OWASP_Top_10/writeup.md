@@ -541,4 +541,61 @@ With this, today's challenge finishes. Tomorrow, I'll add the walkthrough for `C
 
 Go to [Top](#owasp-top-10)
 
+`July 22, 2020`
+
+## Components with Known Vulnerabilities
+Today's challenge is based upon the fact that for most of the software or service that is being used, we can find some or the other form of exploitation on the web that has been discovered by someone. We may find a ready-made script or step-by-step methods to perform an exploit or sometimes even a broken script that we need to fix and then use for exploitation. 
+
+### [Task 28] Components with Known Vulnerabilities - Explanation
+This task just gives a brief on how known vulnerabilities can be searched on the web and can be used to perform exploitation. These vulnerabilities can be found on exploit-db or rapid7. We can also find the CVE details as well for all such vulnerabilities on the web. This vulnerability is also considered as highly risky as anyone can find these vulnerabilities easily on the web and use them for exploitation.
+
+### [Task 29] Components with Known Vulnerabilities - Exploitation
+There is not much that needs to be explained here as the task is pretty much self-explanatory on how you can pop an RCE. Though this method can be defined roughly in a few steps as:
+
+1. Determine the version of the software, application or service.
+2. Try to find out various exploits related to that specific version on the web (eg. on exploit-db or rapid7)
+3. If required, make necessary adjustments to the exploit as per requirement.
+4. Try to implement the exploit.
+5. Debug if some issue is faced and try again. Else, look for some other exploits and start from step 2.
+6. If the exploitation succeeds, we can perform the task we want to.
+
+### [Task 30] Components with Know Vulnerabilities - Practical
+For this challenge, we are not provided with any information on the target. So, it's totally up to us on how we approach to break this box.
+
+First of all, we need to deploy the machine and visit `http://machine_ip` as usual. The webpage would look like:
+
+![bookstore_hompage](./.images/bookstore_homepage.png)
+
+If it were a normal pentest, we would have looked for everything from the HTML code, JS file running in the background of the page to directory traversal. But as this challenge is focused on known vulnerabilities. We just need to find a service that can be exploited.
+
+From the debugger, we can see there were 2 JS files, one for bootstrap v3.3.5 and the other for jquery v2.1.4 but we can't find any promising exploit for these. 
+
+If we see on the lower-left corner of the web page, we can see a link to `projectworlds`. From this website, we can see that they have produced many different PHP projects. We can directly search for exploits related to `projectworlds bookstore exploit` as our target is one of their online bookstore projects. 
+
+In my case, I found [this](https://www.exploit-db.com/exploits/47887) exploit. There are many other exploits available as well on the web. We can download them and try to use them for exploitation. For some codes, we may find documentation on how to use the script whereas for others we might need to figure out on our own how to use those scripts.
+
+For the current case, we can download the [Online Book Store 1.0 - Unauthenticated Remote Code Execution](https://www.exploit-db.com/exploits/47887) script and try to execute it.
+
+We can try to determine how this script needs to be used by simply running the script without passing it any parameters.
+
+```
+tester@kali:~/Downloads$ python 47887.py 
+usage: 47887.py [-h] url
+47887.py: error: too few arguments
+```
+
+Here, we can see that to run the script we need to pass the URL as a parameter else use the `-h` switch to see the help section. So, let's run the script by passing the URL i.e. `http://machine_ip` as the parameter to this script. But an issue might come up like given below:
+
+![rce_error](./.images/rce_error.png)
+
+This error was being generated because when the script asked to start the shell and we enter 'y' it was not able to define the character. We can try to check the script as well to determine if there is some issue with the script but nothing is wrong over there as well. So, it might be the issue of the compiler so, we can try to run the script with `python3` and see if it works. 
+
+![rce_executed](./.images/rce_executed.png)
+
+As expected, it was the issue with the compiler as `python` compiler is for Python2.7 whereas `python3` is for the latest Python3.0. Now the only thing that needs to be done is to run the command to get the word count of passwd file as asked in the question using the command `wc -c /etc/passwd` and enter the received value as the answer.
+
+With this, we can complete today's challenge. Tomorrow is going to be the last day and the last challenge that is `Insufficient Logging and Monitoring`. Wait till I add the walkthrough for that till then keep hacking!
+
+Go to [Top](#owasp-top-10)
+
 P.S. As this is a live challenge I'll be adding the latest challenge write-up only 24 hours after it goes live!!!
