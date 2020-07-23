@@ -21,7 +21,7 @@ This task just provides a list of all the vulnerabilities that are going to be c
 7. [Cross-Site Scripting](#cross-site-scripting)
 8. [Insecure Deserialization](#insecure-deserialization)
 9. [Components With Known Vulnerabilities](#components-with-known-vulnerabilities)
-10. Insufficient Logging and Monitoring
+10. [Insufficient Logging and Monitoring](#insufficient-logging-and-monitoring)
 
 #### Tasks 2 and 3 are just related to VPN access and daily prize. So, nothing important here.
 
