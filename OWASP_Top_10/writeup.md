@@ -598,4 +598,51 @@ With this, we can complete today's challenge. Tomorrow is going to be the last d
 
 Go to [Top](#owasp-top-10)
 
-P.S. As this is a live challenge I'll be adding the latest challenge write-up only 24 hours after it goes live!!!
+`July 23, 2020`
+
+## Insufficient Logging and Monitoring
+Today is the last day of OWASP Top 10 challenges and it is about one of the most important fields in Cyber Security. Logging and monitoring is an important part of cybersecurity. It might not appear to be that important at first glance but it improves the efficiency of an organization to protect themselves from attacks as all the events taking place in the network are being logged and monitored in real-time. Hence, providing a proactive solution for any anomaly taking place in the network. 
+
+Logging also helps in the post-attack kind of scenarios as it enables us to see what all actions were performed by an attacker to execute the attack. With all that information we can improve our security and be prepared for any such attack in the future.
+
+### [Task 31] Insufficient Logging and Monitoring
+This is the last task of this challenge and one of the easiest challenges as well. The task explains how logging and monitoring are important. Some major points from the task are:
+
+1. Logging helps to trace the actions performed by an attacker.
+2. Two major impacts of not having logging and monitoring could be:
+	* Regulatory damage: When the user or client information gets leaked.
+	* Risk of further attack: Organization might face the same attack and won't know how to tackle it.
+3. Some of the important information that should be logged are:
+	* HTTP Status Codes
+	* Time Stamps
+	* Usernames
+	* API endpoints/page locations
+	* IP Addresses
+4. Logs themselves contain sensitive information and hence must be stored securely.
+5. Monitoring also helps to determine the severity of any anomaly taking place based on the information that has been logged.
+
+Coming to the challenge, we need to download a log file which would look somewhat like:
+```
+200 OK           12.55.22.88 jr22          2019-03-18T09:21:17 /login
+200 OK           14.56.23.11 rand99        2019-03-18T10:19:22 /login
+200 OK           17.33.10.38 afer11        2019-03-18T11:11:44 /login
+200 OK           99.12.44.20 rad4          2019-03-18T11:55:51 /login
+200 OK           67.34.22.10 bff1          2019-03-18T13:08:59 /login
+200 OK           34.55.11.14 hax0r         2019-03-21T16:08:15 /login
+401 Unauthorised 49.99.13.16 admin         2019-03-21T21:08:15 /login
+401 Unauthorised 49.99.13.16 administrator 2019-03-21T21:08:20 /login
+401 Unauthorised 49.99.13.16 anonymous     2019-03-21T21:08:25 /login
+401 Unauthorised 49.99.13.16 root          2019-03-21T21:08:30 /login 
+```
+
+1. What IP address is the attacker using?
+* From the logs it is pretty clear that there is one IP address that is trying to access unauthorized data that too with usernames that have higher privileges. The answer to this question is that IP itself.
+
+2. What kind of attack is being carried out?
+* It can be seen that different usernames are being used to perform the attack. Also, as mentioned previously all of them are usernames that might have higher privileges. There is only one attack type in which we use a list of usernames and/or passwords to randomly guess the correct login credentials, that attack type is the answer to this question.
+
+With this, we can conclude the OWASP Top 10 challenge. All of these challenges were very helpful in developing basic knowledge regarding the major vulnerabilities that are found out there in the wild. But as this was just a basic introduction to all these vulnerabilities, it is not easy to find them so easily in the real-world environment.  
+
+### Wish you all the best for your future hacking!!!
+
+Go to [Top](#owasp-top-10)
