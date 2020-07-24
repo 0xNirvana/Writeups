@@ -63,7 +63,6 @@ From these results, we can see there is one interesting page and that is `/admin
 
 The first thing that we can think of when we see a login page would definitely be default credentials and SQL Injection and we can try some basic attacks like:
 
-```
 | Username | Password |
 |----------|----------|
 | admin    | admin    |
@@ -71,7 +70,6 @@ The first thing that we can think of when we see a login page would definitely b
 | admin    | Password |
 | admin    | Password1|
 | ' or 1 =1 -- | random |
-```
 
 Sadly, none of these worked. Another approach could be bruteforcing the password. So, I tried that using Burp Intruder along with the 'fasttrack.txt' wordlist but did not get any result. 
 
