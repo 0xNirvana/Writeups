@@ -71,5 +71,5 @@ So, let's begin!
 	* `$6$` signature is used by the `SHA512crypt` hashing algorithm.
 3. Sometimes, our local hash cracker tools won't work because of the limitations of the variety of values in the passed dictionary. Hence, if not locally then we can search for online hash crackers.
 4. In SHA512crypt hash, the salt is present between `$6$xxxxxxxxx$`.
-5. In case of salted SHA1, password and salt must be arranged accross colon(:).
+5. In case of salted SHA1, password and salt must be arranged across colon(:).
 
