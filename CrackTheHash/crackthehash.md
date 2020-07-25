@@ -67,8 +67,8 @@ So, let's begin!
 ## Some key points to take away
 1. `hash-identifier` can be used to identify a huge variety of hashes.
 2. Sometimes, we can use hash signatures to determine the hashing algorithm like:
-	a. `$2a$`, `$2b$`, `$2y$` signatures are used by the `bcrypt` hashing algorithm.
-	b. `$6$` signature is used by the `SHA512crypt` hashing algorithm.
+	* `$2a$`, `$2b$`, `$2y$` signatures are used by the `bcrypt` hashing algorithm.
+	* `$6$` signature is used by the `SHA512crypt` hashing algorithm.
 3. Sometimes, our local hash cracker tools won't work because of the limitations of the variety of values in the passed dictionary. Hence, if not locally then we can search for online hash crackers.
 4. In SHA512crypt hash, the salt is present between `$6$xxxxxxxxx$`.
 5. In case of salted SHA1, password and salt must be arranged accross colon(:).
