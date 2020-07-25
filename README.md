@@ -14,4 +14,4 @@ This repository is a collection of all the writeups that I have written for each
 |[Nmap](https://github.com/n00b-0x31/TryHackMe-Writeups/blob/master/Nmap/nmap_writeup.md)|Easy|Nmap|
 |[OWASP Top 10](https://github.com/n00b-0x31/TryHackMe-Writeups/blob/master/OWASP_Top_10/writeup.md)|Easy|OWASP Top 10|
 |[Overpass](https://github.com/n00b-0x31/TryHackMe-Writeups/blob/master/Overpass/overpass.md)|Easy|Data Exposure & PrivEsc|
-|Crack The Hash(https://github.com/n00b-0x31/TryHackMe-Writeups/blob/master/CrackTheHash/crackthehash.md)|Easy|Hash Cracking|
+|[Crack The Hash](https://github.com/n00b-0x31/TryHackMe-Writeups/blob/master/CrackTheHash/crackthehash.md)|Easy|Hash Cracking|
