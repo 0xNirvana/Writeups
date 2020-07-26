@@ -15,3 +15,4 @@ This repository is a collection of all the writeups that I have written for each
 |[OWASP Top 10](./OWASP_Top_10/writeup.md)|Easy|OWASP Top 10|
 |[Overpass](./Overpass/overpass.md)|Easy|Data Exposure & PrivEsc|
 |[Crack The Hash](./CrackTheHash/crackthehash.md)|Easy|Hash Cracking|
+|[Basic Pentesting](./BasicPentesting/basicpentesting.md)|Easy|enum4linux, hydra, SSH key cracking|
