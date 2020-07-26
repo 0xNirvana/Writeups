@@ -64,7 +64,7 @@ So, let's begin!
 	The issue here from `hash-identifier` it was found out that it is a SHA-1 hash value but on trying various modes realated to SHA-1 in hashcat like 100, 110, 120, 130, 140 and 150 we were not able to get the cracked value. Finally the value got cracked with mode `-m 160` which is used for `HMAC-SHA1 (key=$salt)`.
 
 
-## Some key points to take away
+## Some Key Points to Take Away
 1. `hash-identifier` can be used to identify a huge variety of hashes.
 2. Sometimes, we can use hash signatures to determine the hashing algorithm like:
 	* `$2a$`, `$2b$`, `$2y$` signatures are used by the `bcrypt` hashing algorithm.
