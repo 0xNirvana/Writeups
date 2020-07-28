@@ -1,5 +1,5 @@
 ## NMAP
-Continuing with another box on TryHackMe, as the name suggests this time it is [Nmap](https://nmap.org/). In my last writeup ([Vulnversity](https://github.com/n00b-0x31/TryHackMe-Writeups/blob/master/Vulnversity/vulnversity_writeup.md)), there was a part where nmap was used but it had a brief role over there. With this room ([Nmap](https://tryhackme.com/room/rpnmap)) on THM we can develop our nmap skill further.
+Continuing with another box on TryHackMe, as the name suggests this time it is [Nmap](https://nmap.org/). In my last writeup ([Vulnversity](../Vulnversity/vulnversity_writeup.md)), there was a part where nmap was used but it had a brief role over there. With this room ([Nmap](https://tryhackme.com/room/rpnmap)) on THM we can develop our nmap skill further.
 
 #### What is nmap?
 As per Wikipedia (https://en.wikipedia.org/wiki/Nmap), it a free open-source network scanner which can be used to discover hosts and services on a computer network by sending packets and analyzing responses. But once we start using nmap to it's fullest, we can see that it can be used for many more things like OS detection, encryptions being used, testing scripts and many more things. Basically, it is one of the most used tools to perform reconnaissance on any given target/s.
