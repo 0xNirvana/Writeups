@@ -22,7 +22,7 @@ steghide: can not uncompress data. compressed data is corrupted.
 
 Steghide was not able to retrieve the data from the image, so we can try to do the same with `StegCracker`. If StegCracker is not present on your machine, it can be downloaded using the command `sudo apt install stegcracker`.
 
-We can pass on a wordlist as to StegCracker which it uses to attack the target file and if the wordlist is not passed on then it by default uses the rockyou.txt to attack the target file.
+We can pass on a wordlist to StegCracker which it uses to attack the target file and if the wordlist is not passed on then it by default uses the rockyou.txt to attack the target file.
 
 ```
 tester@kali:~/Downloads$ stegcracker brooklyn99.jpg 
@@ -65,7 +65,7 @@ holt@brookly_nine_nine:~$ cat user.txt
 And we got the `user.txt` flag. Now, the next task is to get the root access for which we need to perform privilege escalation.
 
 ### Privilege Escalation
-As we have already logged in as holt, we need to become root to get the second flag. We can check for the commands that can be executed as user holt. To do this we can use the command `sudo -l` to list all the commands that we can execute as root.
+As we have already logged in as holt, we need to become root to get the second flag. We can check the commands that can be executed as user holt. To do this we can use the command `sudo -l` to list all the commands that we can execute as root.
 
 ```
 holt@brookly_nine_nine:~$ sudo -l
