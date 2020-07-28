@@ -1,5 +1,5 @@
 # Brooklyn Nine-Nine
-Though the name of this room refers to one of the globally famous series, it does not have anything to solve the box. To be honest, this room is a really easy box once you get the initial foothold. Marked as beginner, this box is truly beginner-friendly and very easy to solve. 
+Though the name of this room refers to one of the globally famous series, it does not have anything to do with solving the box. To be honest, this room is a really easy box once you get the initial foothold. Marked as beginner, this box is truly beginner-friendly and very easy to solve. 
 
 This box can be solved in two ways, I'll be explaining one of them. In this path, we'll be using mainly Steghide and GTFOBins. So, let's get started!
 
