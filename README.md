@@ -5,7 +5,7 @@ TryHackMe is an online platform to learn things related to Computer Security. Th
 This repository is a collection of all the writeups that I have written for each and every room that I have solved.
 
 ### Author
-[n00b-0x31](https://tryhackme.com/p/n00b0x31)
+[0xNirvana](https://tryhackme.com/p/0xNirvana)
 
 ### Available Writeups
 | Room Name | Difficulty Level | Skills Focused |
