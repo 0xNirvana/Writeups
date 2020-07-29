@@ -75,7 +75,7 @@ Again, the values in the decoded string appear to numbers between 30 to 120. Hen
 
 And boom we get our final answer!
 
-![final_ans](./.images/final_ans.png)
+![final_ans](./.images/final_ans.gif)
 
 ### [Task 2] Spectrograms
 This task gives a brief explanation about spectrograms which basically means a visual representation of sthe pectrum of frequencies of a signal as it varies with time. In other words, it represents the signal strength or loudness of a signal over time at various frequencies present in a particular waveform.
