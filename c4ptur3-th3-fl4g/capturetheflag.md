@@ -9,6 +9,7 @@ For this room, there is one major resource i.e. [CyberChef](https://gchq.github.
 1. c4n y0u c4p7u23 7h3 f149?
 
 This one is pretty easy, all that we need to do is replace the characters:
+	
 	* 4 with a
 	* 0 with o
 	* 7 with t
