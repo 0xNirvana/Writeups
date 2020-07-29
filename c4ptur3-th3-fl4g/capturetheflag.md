@@ -1,5 +1,5 @@
 # c4ptur3-th3-fl4g
-As the name suggests, this room is totally based on flags. For each question, we need to find the flag and submit it. Though this room is completely based on flags, it is not something based on pentesting. But we are given certain strings, images or audio for each question that are used to hide these flags. Our task is to identify the specific method to obtain the flag.
+As the name suggests, [this room](https://tryhackme.com/room/c4ptur3th3fl4g) is totally based on flags. For each question, we need to find the flag and submit it. Though this room is completely based on flags, it is not something based on pentesting. But we are given certain strings, images or audio for each question that are used to hide these flags. Our task is to identify the specific method to obtain the flag.
 
 With that being said, let's begin with our challenge.
 
