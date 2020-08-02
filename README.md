@@ -18,4 +18,4 @@ This repository is a collection of all the writeups that I have written for each
 |[Basic Pentesting](./BasicPentesting/basicpentesting.md)|Easy|enum4linux, hydra, SSH key cracking|
 |[Brooklyn Nine-Nine](./Brooklyn99/brooklyn99.md)|Easy|Steganography, GTFOBins|
 |[c4ptur3-th3-fl4g](./c4ptur3-th3-fl4g/capturetheflag.md)|Easy|Encoding, Spectrogram, Steganography|
-|[Linux Challenge](./LinuxChallenges/linuxchallenges.md)|Easy|Linux Commands|
+|[Linux Challenges](./LinuxChallenges/linuxchallenges.md)|Easy|Linux Commands|
