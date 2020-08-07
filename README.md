@@ -21,3 +21,4 @@ This repository is a collection of all the writeups that I have written for each
 |[Linux Challenges](./LinuxChallenges/linuxchallenges.md)|Easy|Linux Commands|
 |[Smag Grotto](./SmagGrotto/smaggrotto.md)|Easy|Packet Analysis, Reverse Shell, SSH keys|
 |[Easy Peasy](./EasyPeasy/easypeasy.md)|Easy|Enumeration, Hash Cracking, Decoding, Steganography|
+|[Bounty Hacker](./bountyHacker/bountyhacker.md)|Easy|FTP, PrivEsc|
