@@ -1,6 +1,6 @@
 # Agent Sudo
 
-In my opinion the [Agent Sudo](https://tryhackme.com/room/agentsudoctf) room on TryHackMe is one of the best rooms for beginners. It focuses on various things related to enumeration, steganography as well as privilege escalation. There were some things that even I encountered for the first time. 
+In my opinion the [Agent Sudo](https://tryhackme.com/room/agentsudoctf) room on TryHackMe is one of the best rooms for beginners. It focuses on various things related to enumeration, steganography as well as reverse image searching. There were some things that even I encountered for the first time. 
 
 So, let's begin!
 
