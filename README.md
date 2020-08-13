@@ -23,4 +23,4 @@ This repository is a collection of all the writeups that I have written for each
 |[Easy Peasy](./EasyPeasy/easypeasy.md)|Easy|Enumeration, Hash Cracking, Decoding, Steganography|
 |[Bounty Hacker](./bountyHacker/bountyhacker.md)|Easy|FTP, PrivEsc|
 |[Lian Yu](./lianYu/lianyu.md)|Easy|Directory Bruteforce, Steganography, PrivEsc|
-|Agent Sudo|Easy|Steganography, Zip Password Bruteforce, Reverse Image Search|
+|[Agent Sudo](./agentSudo/agentsudo.md)|Easy|Steganography, Zip Password Bruteforce, Reverse Image Search|
