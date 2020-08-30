@@ -24,3 +24,5 @@ This repository is a collection of all the writeups that I have written for each
 |[Bounty Hacker](./bountyHacker/bountyhacker.md)|Easy|FTP, PrivEsc|
 |[Lian Yu](./lianYu/lianyu.md)|Easy|Directory Bruteforce, Steganography, PrivEsc|
 |[Agent Sudo](./agentSudo/agentsudo.md)|Easy|Steganography, Zip Password Bruteforce, Reverse Image Search|
+|[Gotta Catch'em All](./gottaCatchEmAll/gottacatchemall.md)|Easy|Decoding, Horizontal Privilege Escalation|
+
