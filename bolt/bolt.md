@@ -233,7 +233,7 @@ find / -name flag.txt 2> /dev/null
 cat /home/flag.txt
 ```
 
-It can be seen that we logged in directly as the `root`. Also, we can use the `find` command to search for the flag and then submit the it to the final question.
+It can be seen that we logged in directly as the `root`. Also, we can use the `find` command to search for the flag and then submit it to the final question.
 
 With this we completed the room Bolt!
 
