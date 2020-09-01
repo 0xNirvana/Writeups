@@ -28,4 +28,5 @@ This repository is a collection of all the writeups that I have written for each
 |[Bolt](./bolt/bolt.md)|Easy|Bolt CMS, Sensitive Data Exposure, Metasploit|
 |[Overpass 2](./overpass2/overpass2.md)|Easy|Packet Analysis, Code Analysis, Hash Cracking|
 |[Git Happens](./gitHappens/githappens.md)|Easy|GitTools, Git Logs|
+|[Kiba](./kiba/kiba.md)|Easy|Kibana, CVE, Linux Capabilities|
 
