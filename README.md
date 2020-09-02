@@ -29,4 +29,5 @@ This repository is a collection of all the writeups that I have written for each
 |[Overpass 2](./overpass2/overpass2.md)|Easy|Packet Analysis, Code Analysis, Hash Cracking|
 |[Git Happens](./gitHappens/githappens.md)|Easy|GitTools, Git Logs|
 |[Kiba](./kiba/kiba.md)|Easy|Kibana, CVE, Linux Capabilities|
+|[Break Out The Cage](./breakOutTheCage/breakoutthecage.md)|Easy|Vingere's Cipher, Reverse Shell, Horizontal PrivEsc|
 
