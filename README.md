@@ -31,4 +31,5 @@ This repository is a collection of all the writeups that I have written for each
 |[Kiba](./kiba/kiba.md)|Easy|Kibana, CVE, Linux Capabilities|
 |[Break Out The Cage](./breakOutTheCage/breakoutthecage.md)|Easy|Vingere's Cipher, Reverse Shell, Horizontal PrivEsc|
 |[Tartarus](./tartarus/tartarus.md)|Easy|Reverse Shell, Horizontal and Vertical Privilege Escalation|
+|[Poster](./poster/poster.md)|Easy|Metasploit, RDBMS command execution, enumeration|
 
