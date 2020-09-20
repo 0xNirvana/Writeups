@@ -278,7 +278,11 @@ drwxr-xr-x 5 root   root   4096 Jul  5 21:45 ..
 www-data@ubuntu-xenial:/home/d4rckh$ cat user.txt
 ```
 
-And in the user `d4rckh`'s we can find our `user.txt` flag. We can move on to user `cleanup`'s directory now:
+And in the user `d4rckh`'s we can find our `user.txt` flag. 
+
+### Privilege Escalation
+
+We can move on to user `cleanup`'s directory now:
 
 ```
 www-data@ubuntu-xenial:/home/d4rckh$ cd ../cleanup
@@ -468,7 +472,7 @@ And we get our root flag as well. So, with this we have completed the Tartarus r
 
 
 
-#### Links Referred
+### Links Referred
 
 1. TryHackMe-Tartarus: https://tryhackme.com/room/tartaraus
 2. GTFOBins: https://gtfobins.github.io/
