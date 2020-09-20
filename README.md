@@ -30,4 +30,5 @@ This repository is a collection of all the writeups that I have written for each
 |[Git Happens](./gitHappens/githappens.md)|Easy|GitTools, Git Logs|
 |[Kiba](./kiba/kiba.md)|Easy|Kibana, CVE, Linux Capabilities|
 |[Break Out The Cage](./breakOutTheCage/breakoutthecage.md)|Easy|Vingere's Cipher, Reverse Shell, Horizontal PrivEsc|
+|[Tartarus](./tartarus/tartarus.md)|Easy|Reverse Shell, Horizontal and Vertical Privilege Escalation|
 
