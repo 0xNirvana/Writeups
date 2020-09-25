@@ -33,4 +33,5 @@ This repository is a collection of all the writeups that I have written for each
 |[Tartarus](./tartarus/tartarus.md)|Easy|Reverse Shell, Horizontal and Vertical Privilege Escalation|
 |[Poster](./poster/poster.md)|Easy|Metasploit, RDBMS command execution, enumeration|
 |[Anthem](./anthem/anthem.md)|Easy|Enumeration, OSINT, Windows PrivEsc, File Permisssion Change|
+|[Year of The Rabbit](./yearOfTheRabbit/yearoftherabbit.md)|Easy|URL Redirection, Brainfuck, Sudo Bypass|
 
