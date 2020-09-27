@@ -35,4 +35,5 @@ This repository is a collection of all the writeups that I have written for each
 |[Anthem](./anthem/anthem.md)|Easy|Enumeration, OSINT, Windows PrivEsc, File Permisssion Change|
 |[Year of The Rabbit](./yearOfTheRabbit/yearoftherabbit.md)|Easy|URL Redirection, Brainfuck, Sudo Bypass|
 |[Tomghost](./tomghost/tomghost.md)|Easy|Ghostcat Vulnerability, PGP Encryption|
+|[Jack of All Trades](./jackofalltrades/jackofalltrades.md)|Easy|Browser Port Override, Steganography, String Decoding, Hydra, SUID exploitation|
 
