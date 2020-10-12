@@ -8,24 +8,14 @@ This repository is a collection of all the writeups that I have written for each
 
 ## **Platforms**
 
-1. [TryHackMe](#TryHackMe)
-2. [HackTheBox](#HackTheBox)
-
-## TryHackMe
-
-Difficulty Level
-
-1. [Easy](#TryHackMe-Easy)
-2. [Medium](./TryHackMe/Medium/medium.md)
-3. [Hard](./TryHackMe/Hard/hard.md)
-
-## **HackTheBox**
-
-Difficulty Level
-
-1. [Easy](#HackTheBox-Easy)
-2. [Medium](./HackTheBox/Medium/medium.md)
-3. [Hard](./HackTheBox/Hard/hard.md)
+1. [TryHackMe](#TryHackMe-Easy)
+   * [Easy](#TryHackMe-Easy)
+   * [Medium](./TryHackMe/Medium/medium.md)
+   * [Hard](./TryHackMe/Hard/hard.md)
+2. [HackTheBox](#HackTheBox-Easy)
+   * [Easy](#HackTheBox-Easy)
+   * [Medium](./HackTheBox/Medium/medium.md)
+   * [Hard](./HackTheBox/Hard/hard.md)
 
 ### TryHackMe: Easy
 
