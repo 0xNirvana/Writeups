@@ -8,9 +8,8 @@ This repository is a collection of all the writeups that I have written for each
 
 ## **Platforms**
 
-1. ### [TryHackMe](#TryHackMe)
-
-2. ### [HackTheBox]()
+1. [TryHackMe](#TryHackMe)
+2. [HackTheBox]()
 
 ## TryHackMe
 
