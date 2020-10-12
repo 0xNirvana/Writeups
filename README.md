@@ -61,7 +61,7 @@ Difficulty Level
 
 ### HackTheBox: Easy
 
-| [OpenAdmin](./HackTheBox/Easy/openAdmin/openadmin.md) | Easy | RCE, RSA Key Extraction, PrivEsc |
-| ----------------------------------------------------- | ---- | -------------------------------- |
-|                                                       |      |                                  |
+| Room Name                                             | Difficulty Level | Skills Focused                   |
+| ----------------------------------------------------- | ---------------- | -------------------------------- |
+| [OpenAdmin](./HackTheBox/Easy/openAdmin/openadmin.md) | Easy             | RCE, RSA Key Extraction, PrivEsc |
 
