@@ -8,11 +8,14 @@ This repository is a collection of all the writeups that I have written for each
 
 ## **Platforms**
 
-1. [TryHackMe](#TryHackMe-Easy)
+1. ### [TryHackMe](#TryHackMe-Easy)
+
    * [Easy](#TryHackMe-Easy)
    * [Medium](./TryHackMe/Medium/medium.md)
    * [Hard](./TryHackMe/Hard/hard.md)
-2. [HackTheBox](#HackTheBox-Easy)
+
+2. ### [HackTheBox](#HackTheBox-Easy)
+
    * [Easy](#HackTheBox-Easy)
    * [Medium](./HackTheBox/Medium/medium.md)
    * [Hard](./HackTheBox/Hard/hard.md)
