@@ -9,25 +9,25 @@ This repository is a collection of all the writeups that I have written for each
 ## **Platforms**
 
 1. [TryHackMe](#TryHackMe)
-2. [HackTheBox]()
+2. [HackTheBox](#HackTheBox)
 
 ## TryHackMe
 
 Difficulty Level
 
-1. [Easy]()
-2. [Medium]()
-3. [Hard]()
+1. [Easy](#TryHackMe-Easy)
+2. [Medium](./TryHackMe/Medium/medium.md)
+3. [Hard](./TryHackMe/Hard/hard.md)
 
 ## **HackTheBox**
 
 Difficulty Level
 
-1. [Easy]()
-2. [Medium]()
-3. [Hard]()
+1. [Easy](#HackTheBox-Easy)
+2. [Medium](./HackTheBox/Medium/medium.md)
+3. [Hard](./HackTheBox/Hard/hard.md)
 
-### Available Writeups
+### TryHackMe: Easy
 
 | Room Name | Difficulty Level | Skills Focused |
 |-----------|------------------|----------------|
@@ -58,4 +58,10 @@ Difficulty Level
 |[Tomghost](./TryHackMe/Easy/tomghost/tomghost.md)|Easy|Ghostcat Vulnerability, PGP Encryption|
 |[Jack of All Trades](./TryHackMe/Easy/jackofalltrades/jackofalltrades.md)|Easy|Browser Port Override, Steganography, String Decoding, Hydra, SUID exploitation|
 |[Psycho Break](./TryHackMe/Easy/psychoBreak/psychobreak.md)|Easy|Vigenere Cipher, Reverse Image Search, T9 Encoding, OS Command Injection|
+
+### HackTheBox: Easy
+
+| [OpenAdmin](./HackTheBox/Easy/openAdmin/openadmin.md) | Easy | RCE, RSA Key Extraction, PrivEsc |
+| ----------------------------------------------------- | ---- | -------------------------------- |
+|                                                       |      |                                  |
 
