@@ -36,4 +36,5 @@ This repository is a collection of all the writeups that I have written for each
 |[Year of The Rabbit](./TryHackMe/Easy/yearOfTheRabbit/yearoftherabbit.md)|Easy|URL Redirection, Brainfuck, Sudo Bypass|
 |[Tomghost](./TryHackMe/Easy/tomghost/tomghost.md)|Easy|Ghostcat Vulnerability, PGP Encryption|
 |[Jack of All Trades](./TryHackMe/Easy/jackofalltrades/jackofalltrades.md)|Easy|Browser Port Override, Steganography, String Decoding, Hydra, SUID exploitation|
+|[Psycho Break](./TryHackMe/Easy/psychoBreak/psychobreak.md)|Easy|Vigenere Cipher, Reverse Image Search, T9 Encoding, OS Command Injection|
 
