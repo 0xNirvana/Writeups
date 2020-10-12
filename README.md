@@ -1,13 +1,35 @@
-# TryHackMe Writeups
+# Writeups
 
-TryHackMe is an online platform to learn things related to Computer Security. There are a lot of different rooms on the website that are focused on different skills. The room difficulties also differ from easy to difficult.
-
-This repository is a collection of all the writeups that I have written for each and every room that I have solved.
+This repository is a collection of all the writeups that I have written for each and every room/machine that I have solved.
 
 ### Author
+
 [0xNirvana](https://tryhackme.com/p/0xNirvana)
 
+## **Platforms**
+
+1. ### [TryHackMe](#TryHackMe)
+
+2. ### [HackTheBox]()
+
+## TryHackMe
+
+Difficulty Level
+
+1. [Easy]()
+2. [Medium]()
+3. [Hard]()
+
+## **HackTheBox**
+
+Difficulty Level
+
+1. [Easy]()
+2. [Medium]()
+3. [Hard]()
+
 ### Available Writeups
+
 | Room Name | Difficulty Level | Skills Focused |
 |-----------|------------------|----------------|
 |[Vulnversity](./TryHackMe/Easy/Vulnversity/vulnversity_writeup.md)|Easy|Nmap, GoBuster, Burp Intruder|
