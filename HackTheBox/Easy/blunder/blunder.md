@@ -67,7 +67,7 @@ We do have one suspected username `fergus` but no associated password. Even in t
 └──╼ $cewl http://10.10.10.191:80 -w words
 ```
 
-This will create a list of words obtained from the webpage. With the help of `tee`, we will get the output displayed on the console and the same would get written in the file `words`. Now, we can use this list along with the username `fergus` to bruteforce the login. But the issue is CSRF token. And to avoid that we need to make a python script which will read the token and pass is in the subsequent request along with the updated password value.
+This will create a list of words obtained from the webpage. With this the output is written in the file `words`. Now, we can use this list along with the username `fergus` to bruteforce the login. But the issue is CSRF token. And to avoid that we need to make a python script which will read the token and pass is in the subsequent request along with the updated password value.
 
 ```
 import requests
