@@ -53,6 +53,7 @@ This repository is a collection of all the writeups that I have written for each
 |[Psycho Break](./TryHackMe/Easy/psychoBreak/psychobreak.md)|Easy|Vigenere Cipher, Reverse Image Search, T9 Encoding, OS Command Injection|
 |[Ignite](./TryHackMe/Easy/ignite/ignite.md)|Easy|Fuel CMS v1.4 Exploit, RCE|
 |[Anonforce](./TryHackMe/Easy/anonforce/anonforce.md)|Easy|Enumeration, PGP Encryption|
+|[Thompson](./TryHackMe/Easy/thompson/thompson.md)|Easy|AJP Exploitation using WAR File|
 
 ### HackTheBox: Easy
 
