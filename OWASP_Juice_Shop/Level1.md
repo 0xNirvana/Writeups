@@ -26,7 +26,7 @@ But we can't enter a rating of less than 1. But we can surely modify the value o
 
 Now, when we forward this request the rating value that has been sent is 0. 
 
-**Takeway:**
+**Takeaway:**
 
 - **This shows that the rating value is not being validated at the server and the client-side validations are being trusted fully in this case which can be bypassed easily.**
 
@@ -48,7 +48,7 @@ If you are logged in the Privacy & Security related information can be found und
 
 # Access a Confidential Document
 
-Again for this task, we need to take help from other tools such as [FFUF](https://www.notion.so/FFUF-5fd5cce1709f442cbf5d852b04eb35a1). We can run a directory traversal attack on the domain to get a list of some juicy directories. And then we can start exploring those directories to see if they contain some confidential document.
+Again for this task, we need to take help from other tools such as [FFUF](https://github.com/ffuf/ffuf). We can run a directory traversal attack on the domain to get a list of some juicy directories. And then we can start exploring those directories to see if they contain some confidential document.
 
 ![./.lv1_images/Untitled%205.png](./.lv1_images/Untitled%205.png)
 
