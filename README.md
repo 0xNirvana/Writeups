@@ -19,6 +19,8 @@ This repository is a collection of all the writeups that I have written for each
    * [Easy](#HackTheBox-Easy)
    * [Medium](./HackTheBox/Medium/medium.md)
    * [Hard](./HackTheBox/Hard/hard.md)
+   
+3. **[OWASP Juice Shop](#OWASP-Juice-Shop)**
 
 ### TryHackMe: Easy
 
@@ -61,4 +63,10 @@ This repository is a collection of all the writeups that I have written for each
 | ----------------------------------------------------- | ---------------- | ------------------------------------------------------------ |
 | [OpenAdmin](./HackTheBox/Easy/openAdmin/openadmin.md) | Easy             | RCE, RSA Key Extraction, PrivEsc                             |
 | [Blunder](./HackTheBox/Easy/blunder/blunder.md)       | Easy             | Cewl, Login Bruteforce with CSRF Token, Multiple Reverse Shell |
+
+### OWASP Juice Shop
+
+| Level | Difficulty Level | Skill Focused                                                |
+| ----- | ---------------- | ------------------------------------------------------------ |
+| One   | Easy             | XSS, Security Misconfiguration, Sensitive Data Exposure, Improper Input Validation |
 
