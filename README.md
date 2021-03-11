@@ -68,5 +68,5 @@ This repository is a collection of all the writeups that I have written for each
 
 | Level | Difficulty Level | Skill Focused                                                |
 | ----- | ---------------- | ------------------------------------------------------------ |
-| One   | Easy             | XSS, Security Misconfiguration, Sensitive Data Exposure, Improper Input Validation |
+| [One](./OWASP_Juice_Shop/Level1.md)  | Easy             | XSS, Security Misconfiguration, Sensitive Data Exposure, Improper Input Validation |
 
