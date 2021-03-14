@@ -6,7 +6,11 @@ After completing all the [Level 1](https://www.notion.so/Level-1-47b98fa6006145e
 
 Whenever it is about admin, the first that should come to our mind is default credentials, simple SQLi or brute-force attack. So, first we can go to the login page and try combination of some of the basic usernames and passwords like:
 
-[Default Credentials](https://www.notion.so/8c9ef8b69d734bcb8e59e01356e35c1c)
+| Username      | Password |
+|---------------|----------|
+| admin         | admin    |
+| administrator | password |
+| root          | pass     |
 
 But apparently none of these work. So, we can try some simple SQLi like:
 
