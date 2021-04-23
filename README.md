@@ -11,7 +11,7 @@ This repository is a collection of all the writeups that I have written for each
 1. ### [TryHackMe](#TryHackMe-Easy)
 
    * [Easy](#TryHackMe-Easy)
-   * [Medium](./TryHackMe/Medium/medium.md)
+   * [Medium](#TryHackMe-Medium)
    * [Hard](./TryHackMe/Hard/hard.md)
 
 2. ### [HackTheBox](#HackTheBox-Easy)
