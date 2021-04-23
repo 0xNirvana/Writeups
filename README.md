@@ -58,6 +58,14 @@ This repository is a collection of all the writeups that I have written for each
 |[Thompson](./TryHackMe/Easy/thompson/thompson.md)|Easy|Linux|AJP Exploitation using WAR File|
 |[Investigating Windows](./TryHackMe/Easy/investigatingWindows/investigatingwindows.md)|Easy|Windows|PowerShell Commands|
 
+### TryHackMe: Medium
+
+| Room Name                                  | Difficulty Level | Type  | Skills Focused                                        |
+| ------------------------------------------ | ---------------- | ----- | ----------------------------------------------------- |
+| [CMesS](./TryHackMe/Medium/cmess/cmess.md) | Medium           | Linux | Subdomain, File Search, Wildcard Privilege Escalation |
+
+
+
 ### HackTheBox: Easy
 
 | Room Name                                             | Difficulty Level | Skills Focused                                               |
