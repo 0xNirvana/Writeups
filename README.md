@@ -24,38 +24,39 @@ This repository is a collection of all the writeups that I have written for each
 
 ### TryHackMe: Easy
 
-| Room Name | Difficulty Level | Skills Focused |
-|-----------|------------------|----------------|
-|[Vulnversity](./TryHackMe/Easy/Vulnversity/vulnversity_writeup.md)|Easy|Nmap, GoBuster, Burp Intruder|
-|[Nmap](./TryHackMe/Easy/Nmap/nmap_writeup.md)|Easy|Nmap|
-|[OWASP Top 10](./TryHackMe/Easy/OWASP_Top_10/writeup.md)|Easy|OWASP Top 10|
-|[Overpass](./TryHackMe/Easy/Overpass/overpass.md)|Easy|Data Exposure & PrivEsc|
-|[Crack The Hash](./TryHackMe/Easy/CrackTheHash/crackthehash.md)|Easy|Hash Cracking|
-|[Basic Pentesting](./TryHackMe/Easy/BasicPentesting/basicpentesting.md)|Easy|enum4linux, hydra, SSH key cracking|
-|[Brooklyn Nine-Nine](./TryHackMe/Easy/Brooklyn99/brooklyn99.md)|Easy|Steganography, GTFOBins|
-|[c4ptur3-th3-fl4g](./TryHackMe/Easy/c4ptur3-th3-fl4g/capturetheflag.md)|Easy|Encoding, Spectrogram, Steganography|
-|[Linux Challenges](./TryHackMe/Easy/LinuxChallenges/linuxchallenges.md)|Easy|Linux Commands|
-|[Smag Grotto](./TryHackMe/Easy/SmagGrotto/smaggrotto.md)|Easy|Packet Analysis, Reverse Shell, SSH keys|
-|[Easy Peasy](./TryHackMe/Easy/EasyPeasy/easypeasy.md)|Easy|Enumeration, Hash Cracking, Decoding, Steganography|
-|[Bounty Hacker](./TryHackMe/Easy/bountyHacker/bountyhacker.md)|Easy|FTP, PrivEsc|
-|[Lian Yu](./TryHackMe/Easy/lianYu/lianyu.md)|Easy|Directory Bruteforce, Steganography, PrivEsc|
-|[Agent Sudo](./TryHackMe/Easy/agentSudo/agentsudo.md)|Easy|Steganography, Zip Password Bruteforce, Reverse Image Search|
-|[Gotta Catch'em All](./TryHackMe/Easy/gottaCatchEmAll/gottacatchemall.md)|Easy|Decoding, Horizontal Privilege Escalation|
-|[Bolt](./TryHackMe/Easy/bolt/bolt.md)|Easy|Bolt CMS, Sensitive Data Exposure, Metasploit|
-|[Overpass 2](./TryHackMe/Easy/overpass2/overpass2.md)|Easy|Packet Analysis, Code Analysis, Hash Cracking|
-|[Git Happens](./TryHackMe/Easy/gitHappens/githappens.md)|Easy|GitTools, Git Logs|
-|[Kiba](./TryHackMe/Easy/kiba/kiba.md)|Easy|Kibana, CVE, Linux Capabilities|
-|[Break Out The Cage](./TryHackMe/Easy/breakOutTheCage/breakoutthecage.md)|Easy|Vingere's Cipher, Reverse Shell, Horizontal PrivEsc|
-|[Tartarus](./TryHackMe/Easy/tartarus/tartarus.md)|Easy|Reverse Shell, Horizontal and Vertical Privilege Escalation|
-|[Poster](./TryHackMe/Easy/poster/poster.md)|Easy|Metasploit, RDBMS command execution, enumeration|
-|[Anthem](./TryHackMe/Easy/anthem/anthem.md)|Easy|Enumeration, OSINT, Windows PrivEsc, File Permisssion Change|
-|[Year of The Rabbit](./TryHackMe/Easy/yearOfTheRabbit/yearoftherabbit.md)|Easy|URL Redirection, Brainfuck, Sudo Bypass|
-|[Tomghost](./TryHackMe/Easy/tomghost/tomghost.md)|Easy|Ghostcat Vulnerability, PGP Encryption|
-|[Jack of All Trades](./TryHackMe/Easy/jackofalltrades/jackofalltrades.md)|Easy|Browser Port Override, Steganography, String Decoding, Hydra, SUID exploitation|
-|[Psycho Break](./TryHackMe/Easy/psychoBreak/psychobreak.md)|Easy|Vigenere Cipher, Reverse Image Search, T9 Encoding, OS Command Injection|
-|[Ignite](./TryHackMe/Easy/ignite/ignite.md)|Easy|Fuel CMS v1.4 Exploit, RCE|
-|[Anonforce](./TryHackMe/Easy/anonforce/anonforce.md)|Easy|Enumeration, PGP Encryption|
-|[Thompson](./TryHackMe/Easy/thompson/thompson.md)|Easy|AJP Exploitation using WAR File|
+| Room Name | Difficulty Level | Type | Skills Focused |
+|-----------|------------------|----------------|----------------|
+|[Vulnversity](./TryHackMe/Easy/Vulnversity/vulnversity_writeup.md)|Easy|Linux|Nmap, GoBuster, Burp Intruder|
+|[Nmap](./TryHackMe/Easy/Nmap/nmap_writeup.md)|Easy|Linux|Nmap|
+|[OWASP Top 10](./TryHackMe/Easy/OWASP_Top_10/writeup.md)|Easy|Other|OWASP Top 10|
+|[Overpass](./TryHackMe/Easy/Overpass/overpass.md)|Easy|Linux|Data Exposure & PrivEsc|
+|[Crack The Hash](./TryHackMe/Easy/CrackTheHash/crackthehash.md)|Easy|Other|Hash Cracking|
+|[Basic Pentesting](./TryHackMe/Easy/BasicPentesting/basicpentesting.md)|Easy|Linux|enum4linux, hydra, SSH key cracking|
+|[Brooklyn Nine-Nine](./TryHackMe/Easy/Brooklyn99/brooklyn99.md)|Easy|Linux|Steganography, GTFOBins|
+|[c4ptur3-th3-fl4g](./TryHackMe/Easy/c4ptur3-th3-fl4g/capturetheflag.md)|Easy|Other|Encoding, Spectrogram, Steganography|
+|[Linux Challenges](./TryHackMe/Easy/LinuxChallenges/linuxchallenges.md)|Easy|Linux|Linux Commands|
+|[Smag Grotto](./TryHackMe/Easy/SmagGrotto/smaggrotto.md)|Easy|Linux|Packet Analysis, Reverse Shell, SSH keys|
+|[Easy Peasy](./TryHackMe/Easy/EasyPeasy/easypeasy.md)|Easy|Linux|Enumeration, Hash Cracking, Decoding, Steganography|
+|[Bounty Hacker](./TryHackMe/Easy/bountyHacker/bountyhacker.md)|Easy|Linux|FTP, PrivEsc|
+|[Lian Yu](./TryHackMe/Easy/lianYu/lianyu.md)|Easy|Linux|Directory Bruteforce, Steganography, PrivEsc|
+|[Agent Sudo](./TryHackMe/Easy/agentSudo/agentsudo.md)|Easy|Linux|Steganography, Zip Password Bruteforce, Reverse Image Search|
+|[Gotta Catch'em All](./TryHackMe/Easy/gottaCatchEmAll/gottacatchemall.md)|Easy|Linux|Decoding, Horizontal Privilege Escalation|
+|[Bolt](./TryHackMe/Easy/bolt/bolt.md)|Easy|Linux|Bolt CMS, Sensitive Data Exposure, Metasploit|
+|[Overpass 2](./TryHackMe/Easy/overpass2/overpass2.md)|Easy|Linux|Packet Analysis, Code Analysis, Hash Cracking|
+|[Git Happens](./TryHackMe/Easy/gitHappens/githappens.md)|Easy|Other|GitTools, Git Logs|
+|[Kiba](./TryHackMe/Easy/kiba/kiba.md)|Easy|Linux|Kibana, CVE, Linux Capabilities|
+|[Break Out The Cage](./TryHackMe/Easy/breakOutTheCage/breakoutthecage.md)|Easy|Linux|Vingere's Cipher, Reverse Shell, Horizontal PrivEsc|
+|[Tartarus](./TryHackMe/Easy/tartarus/tartarus.md)|Easy|Linux|Reverse Shell, Horizontal and Vertical Privilege Escalation|
+|[Poster](./TryHackMe/Easy/poster/poster.md)|Easy|Linux|Metasploit, RDBMS command execution, enumeration|
+|[Anthem](./TryHackMe/Easy/anthem/anthem.md)|Easy|Windows|Enumeration, OSINT, Windows PrivEsc, File Permisssion Change|
+|[Year of The Rabbit](./TryHackMe/Easy/yearOfTheRabbit/yearoftherabbit.md)|Easy|Linux|URL Redirection, Brainfuck, Sudo Bypass|
+|[Tomghost](./TryHackMe/Easy/tomghost/tomghost.md)|Easy|Linux|Ghostcat Vulnerability, PGP Encryption|
+|[Jack of All Trades](./TryHackMe/Easy/jackofalltrades/jackofalltrades.md)|Easy|Linux|Browser Port Override, Steganography, String Decoding, Hydra, SUID exploitation|
+|[Psycho Break](./TryHackMe/Easy/psychoBreak/psychobreak.md)|Easy|Linux|Vigenere Cipher, Reverse Image Search, T9 Encoding, OS Command Injection|
+|[Ignite](./TryHackMe/Easy/ignite/ignite.md)|Easy|Linux|Fuel CMS v1.4 Exploit, RCE|
+|[Anonforce](./TryHackMe/Easy/anonforce/anonforce.md)|Easy|Linux|Enumeration, PGP Encryption|
+|[Thompson](./TryHackMe/Easy/thompson/thompson.md)|Easy|Linux|AJP Exploitation using WAR File|
+|[Investigating Windows](./TryHackMe/Easy/investigatingWindows/investigatingwindows.md)|Easy|Windows|PowerShell Commands|
 
 ### HackTheBox: Easy
 
