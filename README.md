@@ -60,9 +60,10 @@ This repository is a collection of all the writeups that I have written for each
 
 ### TryHackMe: Medium
 
-| Room Name                                  | Difficulty Level | Type  | Skills Focused                                        |
-| ------------------------------------------ | ---------------- | ----- | ----------------------------------------------------- |
-| [CMesS](./TryHackMe/Medium/cmess/cmess.md) | Medium           | Linux | Subdomain, File Search, Wildcard Privilege Escalation |
+| Room Name                                              | Difficulty Level | Type  | Skills Focused                                        |
+| ------------------------------------------------------ | ---------------- | ----- | ----------------------------------------------------- |
+| [CMesS](./TryHackMe/Medium/cmess/cmess.md)             | Medium           | Linux | Subdomain, File Search, Wildcard Privilege Escalation |
+| [UltraTech](./TryHackMe/Medium/ultraTech/ultratech.md) | Medium           | Linux | WebApp Testing, Command Injection, Docker             |
 
 
 
