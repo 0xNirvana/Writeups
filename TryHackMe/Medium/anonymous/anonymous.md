@@ -401,7 +401,9 @@ uid=1000(namelessone) gid=1000(namelessone) euid=0(root) groups=1000(namelessone
 
  And there we get the root flag for this machine!
 
+## Some Key Points to Take Away
 
+1. If FTP is open, check if it is writeable also check files for which write permission is allowed.
 
 ## References
 
