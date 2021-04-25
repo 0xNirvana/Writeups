@@ -272,7 +272,7 @@ $
 
 The issue here is that this is a `dumb` shell and to improve it an interactive shell we can use [python-pty-shells](https://github.com/infodox/python-pty-shells).
 
-Checkout the guide on how to get a fully interactive TTY using using "python-pty-shells" over [here](https://medium.com/writers-blokke/medium-writers-pick-one-of-these-profile-pin-strategies-d0a63b719420).
+Checkout the guide on how to get a fully interactive TTY using using "python-pty-shells" over [here](https://0xnirvana.medium.com/gaining-interactive-reverse-shell-w-python-a4bd490735a8).
 
 Now that we have a fully interactive shell, we can read the user's flag.
 
