@@ -64,6 +64,7 @@ This repository is a collection of all the writeups that I have written for each
 | ------------------------------------------------------ | ---------------- | ----- | ----------------------------------------------------- |
 | [CMesS](./TryHackMe/Medium/cmess/cmess.md)             | Medium           | Linux | Subdomain, File Search, Wildcard Privilege Escalation |
 | [UltraTech](./TryHackMe/Medium/ultraTech/ultratech.md) | Medium           | Linux | WebApp Testing, Command Injection, Docker             |
+| [Anonymous](./TryHackMe/Medium/anonymous/anonymous.md) | Medium           | Linux | FTP, File Permission, GTFOBins                        |
 
 
 
