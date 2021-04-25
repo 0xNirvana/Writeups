@@ -318,6 +318,7 @@ So, basically the `docker` command can be broken down as:
 | `-v`               | Specifying the volume                                        |
 | `/:/mnt`           | Mount the root directory (`/`) at `/mnt`                     |
 | `--rm`             | Remove the container after exit                              |
+| --it               | Interactive                                                  |
 | `bash chroot /mnt` | `bash` is being used to run the `chroot` command which change the effective root directory to `/mnt` |
 | `sh`               | Start a `sh` shell                                           |
 
