@@ -20,9 +20,13 @@ This repository is a collection of all the writeups that I have written for each
    * [Medium](./HackTheBox/Medium/medium.md)
    * [Hard](./HackTheBox/Hard/hard.md)
    
-3. **[OWASP Juice Shop](./OWASP_Juice_Shop/JS_Index.md)**
+3. ### [VulnHub](./.VulnHub/VH_Index.md) [1 Writeup]
 
+   * [Easy](./.VulnHub/VH_Index.md#Easy) [Count: 1]
+   * Medium
+   * Hard
 
+4. ### [OWASP Juice Shop](./OWASP_Juice_Shop/JS_Index.md)
 
 
 
