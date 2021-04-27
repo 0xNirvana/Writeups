@@ -88,7 +88,7 @@ When only semicolon is passed, it returns an error. We can try to add some comma
 
 ![whoami](./.images/whoami.png)
 
-It can be seen that our entered value gets reflected but we did not get the output of the command. We can try backticks (`\``) as they have the highest priority in a command.
+It can be seen that our entered value gets reflected but we did not get the output of the command. We can try backticks (`) as they have the highest priority in a command.
 
 ![whoami_result](./.images/whoami_result.png)
 
@@ -169,7 +169,7 @@ Now the issue here is that in order to get access to the system we need to run t
 9. And there we get our shell.
 10. But as this a dumb shell, we can upgrade it using the method explained [here](https://0xnirvana.medium.com/gaining-interactive-reverse-shell-w-python-a4bd490735a8).
 
-Now we can start exploring the files to which we have acces
+Now we can start exploring the files to which we have access
 
 ```bash
 www-data@dmv:/var/www/html/admin$ ls -la
@@ -345,7 +345,7 @@ With this we have completed the room!
 
 ## References
 
-1. TryHackMe - convertMyVideo: https://tryhackme.com/room/convertmyvideo
+1. TryHackMe - ConvertMyVideo: https://tryhackme.com/room/convertmyvideo
 2. Reverse Shell Generator: https://www.revshells.com/
 3. GTFOBins: https://gtfobins.github.io/
 4. PSPY64: https://github.com/DominicBreuker/pspy#download
