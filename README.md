@@ -8,15 +8,15 @@ This repository is a collection of all the writeups that I have written for each
 
 ## **Platforms**
 
-1. ### [TryHackMe](./TryHackMe/THM_Index.md)
+1. ### [TryHackMe](./TryHackMe/THM_Index.md) [Total: 35 Writeups]
 
-   * [Easy](./TryHackMe/THM_Index.md#Easy)
-   * [Medium](./TryHackMe/THM_Index.md#Medium)
+   * [Easy](./TryHackMe/THM_Index.md#Easy) [31 Writeups]
+   * [Medium](./TryHackMe/THM_Index.md#Medium) [4 Writeups]
    * [Hard](./TryHackMe/Hard/hard.md)
 
-2. ### [HackTheBox](./HackTheBox/HTB_Index.md)
+2. ### [HackTheBox](./HackTheBox/HTB_Index.md) [Total: 2]
 
-   * [Easy](./HackTheBox/HTB_Index.md#Easy)
+   * [Easy](./HackTheBox/HTB_Index.md#Easy) [2 Writeups]
    * [Medium](./HackTheBox/Medium/medium.md)
    * [Hard](./HackTheBox/Hard/hard.md)
    
