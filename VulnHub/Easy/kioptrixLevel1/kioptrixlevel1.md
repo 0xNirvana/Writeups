@@ -2,7 +2,7 @@
 
 [Kioptrix Level 1](https://www.vulnhub.com/entry/kioptrix-level-1-1,22/) is one of the most easiest machines on VulnHub. It is usually the machine with which a large number of people get started with for their OSCP preparations.
 
-Solving this machine is really easy.kali
+Solving this machine is really easy.
 
 
 
