@@ -425,4 +425,3 @@ And with this we have got the access to the machine as `root`!
 1. Kioptrix Level 1: https://www.vulnhub.com/entry/kioptrix-level-12-3,24/
 2. CVE-2011-0519: https://www.exploit-db.com/exploits/15891
 3. CrackStation: https://crackstation.net/
-4. MindMap: 
