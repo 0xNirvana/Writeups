@@ -416,8 +416,13 @@ And with this we have got the access to the machine as `root`!
 1. Keep a track of all the credentials you obtain and try them at every possible place where you can login.
 2. Always look for different different vulnerabilities associated with services/applications that are running on the target.
 
+## Mindmap
+
+![mind_map](E:\My Work\GitHub\Writeups\VulnHub\Easy\kioptrixLevel3\.images\Kioptrix_Level_3_Mindmap.png)
+
 ## References
 
 1. Kioptrix Level 1: https://www.vulnhub.com/entry/kioptrix-level-12-3,24/
 2. CVE-2011-0519: https://www.exploit-db.com/exploits/15891
 3. CrackStation: https://crackstation.net/
+4. MindMap: 
