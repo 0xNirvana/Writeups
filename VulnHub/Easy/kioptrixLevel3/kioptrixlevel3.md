@@ -418,7 +418,7 @@ And with this we have got the access to the machine as `root`!
 
 ## Mindmap
 
-![mind_map](E:\My Work\GitHub\Writeups\VulnHub\Easy\kioptrixLevel3\.images\Kioptrix_Level_3_Mindmap.png)
+![mind_map](./.images/Kioptrix_Level_3_Mindmap.png)
 
 ## References
 
