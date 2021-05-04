@@ -450,11 +450,11 @@ And there we get the access to the machine as `root`.
 
 1. Enumeration
 
-   ![enumeration_mindmap](E:\My Work\GitHub\Writeups\VulnHub\Easy\kioptrixLevel4\.images\kioptrixLevel4_enumeration.png)
+   ![enumeration_mindmap](./.images/kioptrixLevel4_enumeration.png)
 
 2. Privilege Escalation
 
-   ![privesc_mindmap](E:\My Work\GitHub\Writeups\VulnHub\Easy\kioptrixLevel4\.images\kioptrixLevel4_privEsc.png)
+   ![privesc_mindmap](./.images/kioptrixLevel4_privEsc.png)
 
 ## Some Key Points to Take Away
 
