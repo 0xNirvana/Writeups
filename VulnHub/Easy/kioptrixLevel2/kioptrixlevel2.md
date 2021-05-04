@@ -166,7 +166,6 @@ HOME=/
 02 4 * * * root run-parts /etc/cron.daily
 22 4 * * 0 root run-parts /etc/cron.weekly
 42 4 1 * * root run-parts /etc/cron.monthly
-
 ```
 
 But we can't see any such suspicious cronjob running over here. 
@@ -185,12 +184,11 @@ bash-3.00$ cd harold/
 bash: cd: harold/: Permission denied
 bash-3.00$ cd john/
 bash: cd: john/: Permission denied
-
 ```
 
 It can be seen that there are two users on the system "harold" and "john" but we don't have access to anyone's directory.
 
-Now, as the username is `apache` we can assume that this user is created for some web service. So, we can check the files in `var/www` directory to see if we can find some sensitive information that might help us to escalate privileges. \
+Now, as the username is `apache` we can assume that this user is created for some web service. So, we can check the files in `var/www` directory to see if we can find some sensitive information that might help us to escalate privileges. 
 
 If we recall, then we had found an SQLi on the `index.php` page. So, it means that it would've been connected to some database in the backend. So, we can try to read the code for `index.php` in `/var/www/html` to see we can find some useful information.
 
@@ -200,7 +198,6 @@ bash-3.00$ cat index.php
 	mysql_connect("localhost", "john", "hiroshima") or die(mysql_error());
 	//print "Connected to MySQL<br />";
 	mysql_select_db("webapp");
-
 ```
 
 And the very beginning of the file we can find MySQL login credentials for user "john". Just to check if there is a case of password reuse we can first try to switch user to "john" or "harold" using the password "hiroshima" before check the database.
@@ -233,8 +230,6 @@ mysql> show databases;
 | webapp   |
 +----------+
 3 rows in set (0.03 sec)
-
-
 ```
 
 It can be seen that there are 3 tables. We can check each one of them.
@@ -322,7 +317,6 @@ mysql> select Host, User, Password from user;
 | localhost             | john | 5a6914ba69e02807 |
 +-----------------------+------+------------------+
 5 rows in set (0.00 sec)
-
 ```
 
 Because there are a large number of columns in the table, we can select only the columns that we are interested in which are `Host, User and Password`.
