@@ -270,7 +270,7 @@ To obtain information about the database we can follow the following process:
 
    ![dev_accounts_columns](./.images/dev_accounts_columns.png)
 
-   Here, we can that there are 3 columns in the table `dev_accounts` . 
+   Here, we can see that there are 3 columns in the table `dev_accounts` . 
 
 6. The next step would be to extract the data from the table `dev_accounts`.
 
@@ -325,7 +325,7 @@ When we try to login as user dreg, we do succeed but the issue is dreg can't run
 
 ## Gaining Access - Method 2
 
-As from the blog page, we saw that a suspected username was published over there which was "**loneferret**". So, we can try to run an SSH bruteforce attack to check if we can crack his password.
+As from the blog page, we saw that a suspected username was published over there which was "**loneferret**". So, we can try to run an SSH brute force attack to check if we can crack his password.
 
 ```
 ┌──(kali㉿kali)-[~/Desktop/oscp/vulnhub/kioptrix_lv3]
