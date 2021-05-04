@@ -8,9 +8,9 @@ This repository is a collection of all the writeups that I have written for each
 
 ## **Platforms**
 
-1. ### [TryHackMe](./TryHackMe/THM_Index.md) [35 Writeups]
+1. ### [TryHackMe](./TryHackMe/THM_Index.md) [36 Writeups]
 
-   * [Easy](./TryHackMe/THM_Index.md#Easy) [Count: 31]
+   * [Easy](./TryHackMe/THM_Index.md#Easy) [Count: 32]
    * [Medium](./TryHackMe/THM_Index.md#Medium) [Count: 4]
    * [Hard](./TryHackMe/Hard/hard.md)
 
