@@ -36,6 +36,7 @@
 | [Thompson](./Easy/thompson/thompson.md)                      | Easy             | Linux   | AJP Exploitation using WAR File                              |
 | [Investigating Windows](./Easy/investigatingWindows/investigatingwindows.md) | Easy             | Windows | PowerShell Commands                                          |
 | [Chocolate Factory](./Easy/chocolateFactory/chocolatefactory.md) | Easy             | Linux   | Information Disclosure, Improper File Permission             |
+| [Archangel](./Easy/archangel/archangel.md)                   | Easy             | Linux   | LFI, LFI2RCE, SUID Binary Exploitation                       |
 
 ## Medium
 
