@@ -20,9 +20,9 @@ This repository is a collection of all the writeups that I have written for each
    * [Medium](./HackTheBox/Medium/medium.md)
    * [Hard](./HackTheBox/Hard/hard.md)
    
-3. ### [VulnHub](./VulnHub/VH_Index.md) [4 Writeups]
+3. ### [VulnHub](./VulnHub/VH_Index.md) [5 Writeups]
 
-   * [Easy](./VulnHub/VH_Index.md#Easy) [Count: 4]
+   * [Easy](./VulnHub/VH_Index.md#Easy) [Count: 5]
    * Medium
    * Hard
 

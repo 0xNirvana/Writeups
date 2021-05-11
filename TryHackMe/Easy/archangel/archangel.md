@@ -385,6 +385,6 @@ And we get the access to the machine as `root`!
 ## References
 
 1. [TryHackMe: Archangel](https://tryhackme.com/room/archangel)
-2. [HackTricks.xyz - FI](https://book.hacktricks.xyz/pentesting-web/file-inclusion#basic-rfi)
+2. [HackTricks.xyz - LFI](https://book.hacktricks.xyz/pentesting-web/file-inclusion#basic-rfi)
 3. [LFI to RCE via PHP Session](https://www.rcesecurity.com/2017/08/from-lfi-to-rce-via-php-sessions/)
 
