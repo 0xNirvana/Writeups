@@ -1,5 +1,6 @@
 # Lame
 #TJNull
+
 [Lame](https://app.hackthebox.com/machines/Lame) is a really easy box and even for a beginner it won't take more than an hour at max. The main purpose of this room is to make you realize that all the services that are exposed should be tested thoroughly for any kind of vulnerability.
 
 So, let's begin!
