@@ -237,4 +237,4 @@ References:
 3. [padsalatushal/CVE-2011-2523](https://github.com/padsalatushal/CVE-2011-2523)
 4. [nobodyatall648/CVE-2011-2523](https://github.com/nobodyatall648/CVE-2011-2523)
 5. [Metasploit CVE-2011-2623](https://www.exploit-db.com/exploits/49757)
-6. [Usermap Exploit](https://www.rapid7.com/db/modules/exploit/multi/samba/usermap_script/)S
+6. [Usermap Exploit](https://www.rapid7.com/db/modules/exploit/multi/samba/usermap_script/)

@@ -16,7 +16,7 @@ This repository is a collection of all the writeups that I have written for each
 
 2. ### [HackTheBox](./HackTheBox/HTB_Index.md) [2 Writeups]
 
-   * [Easy](./HackTheBox/HTB_Index.md#Easy) [Count: 2]
+   * [Easy](./HackTheBox/HTB_Index.md#Easy) [Count: 3]
    * [Medium](./HackTheBox/Medium/medium.md)
    * [Hard](./HackTheBox/Hard/hard.md)
    
