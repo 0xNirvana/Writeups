@@ -337,7 +337,7 @@ With this, we pwned the Blender machine!
 
 
 
-### Links Referred
+## Links Referred
 
 1. HackTheBox-Blunder: https://www.hackthebox.eu/home/machines/profile/254
 2. Bludit Directory Traversal Attack: https://www.exploit-db.com/exploits/48701
