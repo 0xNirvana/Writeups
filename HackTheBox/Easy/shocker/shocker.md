@@ -185,9 +185,6 @@ The `user.sh` script can be retreived using `wget`.
 
 ```
 ┌──(kali㉿kali)-[~/Desktop/htb/shocker]
-└─$ man ffuf       
-                                                                                                                      
-┌──(kali㉿kali)-[~/Desktop/htb/shocker]
 └─$ wget http://10.10.10.56/cgi-bin/user.sh
 --2022-08-18 23:55:41--  http://10.10.10.56/cgi-bin/user.sh
 Connecting to 10.10.10.56:80... connected.
