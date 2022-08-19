@@ -241,3 +241,5 @@ With this we completed the room Bolt!
 
 1. Whenever exploiting a service, always read it's documentation for default paths and credentials.
 2. Use Google, ExploitDB, AttackerKB, Rapid7 and other such websites to look for related CVE's.
+
+![index](./.images/index.jpg)

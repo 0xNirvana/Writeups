@@ -16,7 +16,7 @@ This repository is a collection of all the writeups that I have written for each
 
 2. ### [HackTheBox](./HackTheBox/HTB_Index.md) [2 Writeups]
 
-   * [Easy](./HackTheBox/HTB_Index.md#Easy) [Count: 3]
+   * [Easy](./HackTheBox/HTB_Index.md#Easy) [Count: 5]
    * [Medium](./HackTheBox/Medium/medium.md)
    * [Hard](./HackTheBox/Hard/hard.md)
    
@@ -27,6 +27,3 @@ This repository is a collection of all the writeups that I have written for each
    * Hard
 
 4. ### [OWASP Juice Shop](./OWASP_Juice_Shop/JS_Index.md)
-
-
-
