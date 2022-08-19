@@ -54,7 +54,7 @@ Nmap done: 1 IP address (1 host up) scanned in 20.79 seconds
 
 From the scan results, it can be seen that only port 80 and 2222 are open and there are no direct RCE exploits available for both of them. But as we have port 80 open, we can try to access the IP address from the browser.
 
-![[images/index.png]]
+![index_page](./.images/index.png)
 
 There is no useful information even in the source-code of this page. But we can definitely try to perform a directory brute-force attack to find out any hidden directories.
 
