@@ -9,3 +9,4 @@
 | [Lame](./Easy/lame/lame.md)                | Easy             | nmap, metasploit                                             |
 | [Legacy](./Easy/legacy/legacy.md)          | Easy             | nmap, MS17-010                                               |
 | [Shocker](./Easy/shocker/shocker.md) | Easy | Shellshock, Directory Brute-force |
+| [Blue](./Easy/blue/blue.md) | Easy | MS17-010 |
