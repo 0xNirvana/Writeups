@@ -23,7 +23,7 @@ Nmap done: 1 IP address (1 host up) scanned in 800.17 seconds
 
 It can be seen that only port 80 is open. So, we can check the page visually.
 
-![image-20220820182023486](E:\GitHub\Writeups\HackTheBox\Easy\bashed\.images\image-20220820182023486.png)
+![image-20220820182023486](.\.images\image-20220820182023486.png)
 
 This appears to be a simple web page and if we click on the link of the top article it takes us to another page where link for a [GitHub repo](https://github.com/Arrexel/phpbash) is provided. Also, by looking at the images attached in that article it looks like with this tool you can run commands on the machine on which it is hosted. 
 
@@ -74,7 +74,7 @@ uploads                 [Status: 301, Size: 312, Words: 20, Lines: 10]
 
 While checking each path manually, we can see that the same `php` file are present in the `/dev` directory. 
 
-![image-20220820183646437](E:\GitHub\Writeups\HackTheBox\Easy\bashed\.images\image-20220820183646437.png)
+![image-20220820183646437](.\.images\image-20220820183646437.png)
 
 
 
@@ -82,7 +82,7 @@ So, now we have access to a shell and all we need to do is generate a reverse co
 
 We can create a reverse connection using python but we need to check if python is present on the target machine or not.
 
-![image-20220820183753771](E:\GitHub\Writeups\HackTheBox\Easy\bashed\.images\image-20220820183753771.png)
+![image-20220820183753771](.\.images\image-20220820183753771.png)
 
 And it looks like python is present on the target machine. So, we can start a listener using the command `nc -nlvp 1337` and then run the python command mentioned below in the shell to get a reverse connection.
 
@@ -231,7 +231,7 @@ Copied to: /home/kali/Desktop/htb/bashed/4145
 
 We can send this to that target machine by creating a python server with the command `python3 -m http.server` and then retrieving the file on the target machine with `wget`.
 
-![image-20220820185724520](E:\GitHub\Writeups\HackTheBox\Easy\bashed\.images\image-20220820185724520.png)
+![image-20220820185724520](.\.images\image-20220820185724520.png)
 
 We also need to make this file executable which can be done by `chmod +x exploit`. Once that is done all we need to do is run the executable and get a shell as root.
 

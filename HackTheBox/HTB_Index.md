@@ -12,3 +12,4 @@
 | [Blue](./Easy/blue/blue.md) | Easy | MS17-010 |
 | [Bashed](./Easy/bashed/bashed.md) | Easy | DirtyCow |
 | [Devel](./Easy/devel/devel.md) | Easy | Anonymous FTP, ASPX Reverse Shell, MS11-046 |
+
