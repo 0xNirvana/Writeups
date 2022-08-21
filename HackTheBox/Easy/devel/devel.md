@@ -74,7 +74,7 @@ It looks like the data stored in the FTP server is being used to host the IIS ba
 
 When we access the IP address via browser we can see the same `welcome.png` being hosted which confirms our suspicion.
 
-![image-20220821094754797](.\.images\image-20220821094754797.png)
+![image-20220821094754797](./.images/image-20220821094754797.png)
 
 This gives a clear hint that we can try to upload a malicious page from the FTP server and then invoke it by sending a request via our browser and then get a reverse shell. 
 
