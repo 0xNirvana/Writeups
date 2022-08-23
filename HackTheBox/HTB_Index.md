@@ -13,4 +13,5 @@
 | [Bashed](./Easy/bashed/bashed.md) | Easy | DirtyCow |
 | [Devel](./Easy/devel/devel.md) | Easy | Anonymous FTP, ASPX Reverse Shell, MS11-046 |
 | [Nibbles](./Easy/nibbles/nibbles.md) | Easy | Password Guessing, Improper File Access |
+| [Optimum](./Easy/optimum/optimum.md) | Easy | Windows PrivEsc |
 
