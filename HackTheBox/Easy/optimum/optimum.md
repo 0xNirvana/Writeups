@@ -1,7 +1,5 @@
 # Optimum
 
-*xlrd version issue ==> install 1.2.0 for python2.7*
-
 [Optimum](https://app.hackthebox.com/starting-point) is a Windows machine and though it is marked as easy, I think it stands somewhere between easy and medium. The initial part to gain a foothold and getting the user flag is pretty easy but the part where you need to escalate your privileges is a bit complicated (if you try to explore it in depth).
 
 So, let's begin!
