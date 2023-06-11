@@ -14,9 +14,9 @@ This repository is a collection of all the writeups that I have written for each
    * [Medium](./TryHackMe/THM_Index.md#Medium) [Count: 4]
    * [Hard](./TryHackMe/Hard/hard.md)
 
-2. ### [HackTheBox](./HackTheBox/HTB_Index.md) [10 Writeups]
+2. ### [HackTheBox](./HackTheBox/HTB_Index.md) [11 Writeups]
 
-   * [Easy](./HackTheBox/HTB_Index.md#Easy) [Count: 10]
+   * [Easy](./HackTheBox/HTB_Index.md#Easy) [Count: 11]
    * [Medium](./HackTheBox/Medium/medium.md)
    * [Hard](./HackTheBox/Hard/hard.md)
    
