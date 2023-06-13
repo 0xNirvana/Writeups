@@ -16,10 +16,15 @@ This repository is a collection of all the writeups that I have written for each
 
 2. ### [HackTheBox](./HackTheBox/HTB_Index.md) [11 Writeups]
 
-   * [Easy](./HackTheBox/HTB_Index.md#Easy) [Count: 11]
-   * [Medium](./HackTheBox/Medium/medium.md)
-   * [Hard](./HackTheBox/Hard/hard.md)
-   
+   - **[Machines](./HackTheBox/Machines/HTB_Machines_Index.md)**
+     - [Easy](./HackTheBox/Machines/HTB_Machines_Index.md#Easy) [Count: 11]
+     - Medium
+     - Hard
+   - **[Challenges](./HackTheBox/Challenges/HTB_Challenges_Index.md)**
+     - [Easy](./HackTheBox/Challenges/HTB_Challenges_Index.md#Easy) [Count: 1]
+     - Medium
+     - Hard
+
 3. ### [VulnHub](./VulnHub/VH_Index.md) [5 Writeups]
 
    * [Easy](./VulnHub/VH_Index.md#Easy) [Count: 5]
