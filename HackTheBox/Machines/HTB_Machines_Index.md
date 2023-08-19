@@ -16,4 +16,5 @@
 | [Optimum](./Easy/optimum/optimum.md) | Easy | Windows PrivEsc |
 | [Heist](./Easy/heist/heist.md) | Easy | SID Enumeration, Process Dumping |
 | [Curling](./Easy/curling/curling.md) | Easy | Enumeration, Misconfigured Processes |
+| [PC](./Easy/pc/pc.md) | Easy | API Enumeration |
 
