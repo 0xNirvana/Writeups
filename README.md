@@ -17,7 +17,7 @@ This repository is a collection of all the writeups that I have written for each
 2. ### [HackTheBox](./HackTheBox/HTB_Index.md) [12 Writeups]
 
    - **[Machines](./HackTheBox/Machines/HTB_Machines_Index.md)**
-     - [Easy](./HackTheBox/Machines/HTB_Machines_Index.md#Easy) [Count: 12]
+     - [Easy](./HackTheBox/Machines/HTB_Machines_Index.md#Easy) [Count: 13]
      - Medium
      - Hard
    - **[Challenges](./HackTheBox/Challenges/HTB_Challenges_Index.md)**
