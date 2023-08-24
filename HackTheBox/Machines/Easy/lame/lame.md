@@ -232,7 +232,8 @@ And there we get the root flag!
 ## Some Key Points to Take Away
 1. Always check for any kind of vulnerability for all the services that are exposed.
 
-References:
+## References
+
 1. [Lame](https://app.hackthebox.com/machines/Lame)
 2. [distcc_exec Exploit](https://www.rapid7.com/db/modules/exploit/unix/misc/distcc_exec/)
 3. [padsalatushal/CVE-2011-2523](https://github.com/padsalatushal/CVE-2011-2523)

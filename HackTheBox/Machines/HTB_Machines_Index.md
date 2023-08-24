@@ -17,4 +17,5 @@
 | [Heist](./Easy/heist/heist.md) | Easy | SID Enumeration, Process Dumping |
 | [Curling](./Easy/curling/curling.md) | Easy | Enumeration, Misconfigured Processes |
 | [PC](./Easy/pc/pc.md) | Easy | API Enumeration |
+| [Keeper](./Easy/keeper/keeper.md) | Easy | Default Credentials, Application Vulnerability Exploit, PuTTY |
 

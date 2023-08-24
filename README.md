@@ -14,10 +14,10 @@ This repository is a collection of all the writeups that I have written for each
    * [Medium](./TryHackMe/THM_Index.md#Medium) [Count: 4]
    * [Hard](./TryHackMe/Hard/hard.md)
 
-2. ### [HackTheBox](./HackTheBox/HTB_Index.md) [12 Writeups]
+2. ### [HackTheBox](./HackTheBox/HTB_Index.md) [14 Writeups]
 
    - **[Machines](./HackTheBox/Machines/HTB_Machines_Index.md)**
-     - [Easy](./HackTheBox/Machines/HTB_Machines_Index.md#Easy) [Count: 13]
+     - [Easy](./HackTheBox/Machines/HTB_Machines_Index.md#Easy) [Count: 14]
      - Medium
      - Hard
    - **[Challenges](./HackTheBox/Challenges/HTB_Challenges_Index.md)**
