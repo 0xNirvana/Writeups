@@ -1,6 +1,6 @@
 # Sau
 
-[Sau](https://app.hackthebox.com/machines/Sau) is an Easy machine on Hack The Box. The machine focuses on exploiting
+[Sau](https://app.hackthebox.com/machines/Sau) is an Easy machine on Hack The Box. The machine focuses on exploiting multiple vulnerabilities in order to gain access to the machine. The privilege escalation is pretty much straight forward compared to gaining the initial access on the machine.
 
 ## Enumeration
 
