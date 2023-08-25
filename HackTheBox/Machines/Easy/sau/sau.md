@@ -209,7 +209,7 @@ User puma may run the following commands on sau:
 
 It looks like we can check the status of the `trail.service`. Usually, the output of these commands is processed through `less` and we can take reference from [GTFOBins for `less`](https://gtfobins.github.io/#less) and then break into `root`. 
 
-![root](./.images/root.png)
+![root](./.images/root.gif)
 
 And just like that we get the root access!
 
