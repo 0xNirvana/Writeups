@@ -18,4 +18,5 @@
 | [Curling](./Easy/curling/curling.md) | Easy | Enumeration, Misconfigured Processes |
 | [PC](./Easy/pc/pc.md) | Easy | API Enumeration |
 | [Keeper](./Easy/keeper/keeper.md) | Easy | Default Credentials, Application Vulnerability Exploit, PuTTY |
+| [Sau](./Easy/sau/sau.md) | Easy | Application Vulnerability Exploit |
 
