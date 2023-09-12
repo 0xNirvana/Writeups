@@ -56,7 +56,7 @@ So, it is clear that there are 160 additional bytes before 0x9d position. So, we
 ```
 
 Though we can still get the flag through maybe an unitended way and this is by opening your file browser and enlargin the thumbnail of the image. The flag can be seen in the thumbnail.
-![Broken Image In File Viewer](~/.images/broken_image.png)
+![Broken Image In File Viewer](./.images/broken_image.png)
 And there we get our flag: `PCT{c0rrupt3d_b1t5_4r3_c00l}`
 
 ## Capybara - Forensics
