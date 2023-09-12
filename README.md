@@ -32,3 +32,7 @@ This repository is a collection of all the writeups that I have written for each
    * Hard
 
 4. ### [OWASP Juice Shop](./OWASP_Juice_Shop/JS_Index.md)
+
+5. **Other Online CTFs**
+
+   - [Patriot CTF 2023](./Online_CTFs/patriotctf_2023/writeup.md)
