@@ -20,3 +20,11 @@
 | [Keeper](./Easy/keeper/keeper.md) | Easy | Default Credentials, Application Vulnerability Exploit, PuTTY |
 | [Sau](./Easy/sau/sau.md) | Easy | Application Vulnerability Exploit |
 
+## Medium
+
+| Machine Name                        | Difficult Level | Skills Focused |
+| ----------------------------------- | --------------- | -------------- |
+| [Jeeves](./Medium/jeeves/jeeves.md) | Medium          | PowerShell     |
+
+
+
